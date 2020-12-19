@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 import { randPlanet } from '../../api/planet'
 import Card from 'react-bootstrap/Card'
+import ListGroup from 'react-bootstrap/ListGroup'
+import ListGroupItem from 'react-bootstrap/ListGroupItem'
+import Button from 'react-bootstrap/Button'
 
 const RandomPlanet = (props) => {
   const [planet, setPlanet] = useState(null)
@@ -27,20 +30,72 @@ const RandomPlanet = (props) => {
       })
   }, [])
 
+  function randomize () {
+    randPlanet(user, match.params.planetId)
+      .then(res => {
+        setPlanet(res.data.planet)
+      })
+      .catch(err => {
+        msgAlert({
+          heading: 'Show Planet Failed',
+          message: 'Error code: ' + err.message,
+          variant: 'danger'
+        })
+      })
+      .catch(err => {
+        msgAlert({
+          heading: 'Deletion Failed',
+          message: 'Something went wrong: ' + err.message,
+          variant: 'danger'
+        })
+      })
+    console.log(planet)
+  }
+
+  function favourite () {
+
+    // api call create fav
+
+    // randPlanet(user, match.params.planetId)
+    //   .then(res => {
+    //     setPlanet(res.data.planet)
+    //   })
+    //   .catch(err => {
+    //     msgAlert({
+    //       heading: 'Show Planet Failed',
+    //       message: 'Error code: ' + err.message,
+    //       variant: 'danger'
+    //     })
+    //   })
+    //   .catch(err => {
+    //     msgAlert({
+    //       heading: 'Deletion Failed',
+    //       message: 'Something went wrong: ' + err.message,
+    //       variant: 'danger'
+    //     })
+    //   })
+  }
+
   return (
     <div>
       {planet ? (
         <div>
-          <Card key={planet._id} className="mb-2 mt-2" style={{ width: '100%' }}>
+          <Card key={planet._id} className="mb-2 mt-2" style={{ width: '500px' }}>
             <Card.Body>
               <Card.Title>
                 {planet.name}
               </Card.Title>
-              <Card.Text>
-                {planet.orbit}
-                {planet.temp}
-                {planet.discovered}
-              </Card.Text>
+              <ListGroup variant="flush">
+                <ListGroupItem>Orbit:{planet.orbit}</ListGroupItem>
+                <ListGroupItem>Orbit period:{planet.orbit_period}</ListGroupItem>
+                <ListGroupItem>temp:{planet.temp}</ListGroupItem>
+                <ListGroupItem>radius: {planet.radius_e + ' earths'}</ListGroupItem>
+                <ListGroupItem>mass: {planet.mass_e + ' earths'}</ListGroupItem>
+                <ListGroupItem>density: {planet.density + 'g/cm cubed'}</ListGroupItem>
+                <ListGroupItem>discovered:{planet.discovered}</ListGroupItem>
+              </ListGroup>
+              <Button onClick={randomize}>Randomize</Button>
+              <Button onClick={favourite}>Favourite</Button>
             </Card.Body>
           </Card>
         </div>
