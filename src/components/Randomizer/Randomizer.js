@@ -75,6 +75,7 @@ const RandomPlanet = (props) => {
               </ListGroup>
               <Card.Body>
                 <Button onClick={randomize}>Randomize</Button>
+                <Button className="Button" variant="outline-info" href={'#planets/' + planet._id}>See More</Button>
               </Card.Body>
               {(user) ? (
                 <CreateFav
