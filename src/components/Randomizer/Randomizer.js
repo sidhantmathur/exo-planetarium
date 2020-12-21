@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
 import ListGroupItem from 'react-bootstrap/ListGroupItem'
 import Button from 'react-bootstrap/Button'
-import CreateFav from '../CreateFav/CreateFav'
+import CreateFav from '../Favs/CreateFav/CreateFav'
 
 const RandomPlanet = (props) => {
   const [planet, setPlanet] = useState(null)

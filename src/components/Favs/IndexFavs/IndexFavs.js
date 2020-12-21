@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
-import { indexFavs } from '../../api/fav'
-import messages from '../Util/AutoDismissAlert/messages'
+import { indexFavs } from '../../../api/fav'
+import messages from '../../Util/AutoDismissAlert/messages'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import CardColumns from 'react-bootstrap/CardColumns'

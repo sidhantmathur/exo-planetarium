@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import { createFav } from '../../api/fav'
+import { createFav } from '../../../api/fav'
 // import messages from '../AutoDismissAlert/messages'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
