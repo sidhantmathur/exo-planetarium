@@ -5,14 +5,19 @@ import {
   Pagination,
   Configure } from 'react-instantsearch-dom'
 import Content from './Content'
+const algoliasearch = require('algoliasearch/lite.js')
+
+const searchClient = algoliasearch(
+  'latency',
+  '6be0576ff61c053d5f9a3225e2a90f76'
+)
 
 class Search2 extends Component {
   render () {
     return (
       <InstantSearch
-        appId="B1G2GM9NG0"
-        apiKey="aadef574be1f9252bb48d4ea09b5cfe5"
-        indexName="demo_media"
+        indexName="instant_search"
+        searchClient={searchClient}
       >
         <main className="search-container">
           <Configure

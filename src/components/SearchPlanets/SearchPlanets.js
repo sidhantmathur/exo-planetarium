@@ -4,32 +4,34 @@ import { withRouter } from 'react-router-dom'
 import algoliasearch from 'algoliasearch/lite'
 import {
   InstantSearch,
-  SearchBox
+  SearchBox,
+  Hits
 } from 'react-instantsearch-dom'
+// import Content from './Content'
 
 const searchClient = algoliasearch(
   'ZY0B7OIB0M',
-  '4c3cebd4cd45f1523b111e8fd8f978a4'
+  'daf73b9b9a5564ae2818315242ecd34d'
 )
 
-class SearchPlanets extends Component {
-  constructor () {
-    super()
-    this.state = {
-      favs: null
-    }
-  }
+// const searchClient = algoliasearch(
+//   'latency',
+//   '6be0576ff61c053d5f9a3225e2a90f76'
+// )
 
+class SearchPlanets extends Component {
   render () {
     return (
       <div>
         <p>Some text</p>
         <InstantSearch
-          indexName="instant_search"
+          indexName="dev-planets"
           searchClient={searchClient}
         >
           {/* Widgets */}
           <SearchBox />
+          {/* <Content /> */}
+          <Hits />
         </InstantSearch>
       </div>
     )
