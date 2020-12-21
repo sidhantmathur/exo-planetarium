@@ -38,7 +38,6 @@ class IndexFavs extends Component {
 
   render () {
     const { user } = this.props
-    console.log(this.state.favs)
     let favJsx
     if (!this.state.favs) {
       favJsx = 'Loading...'
@@ -47,6 +46,7 @@ class IndexFavs extends Component {
     } else if (!user) {
       favJsx = 'Log In to Fav Planets'
     } else {
+      console.log(this.state.favs)
       favJsx = this.state.favs.map(fav => (
 
         <Card key={fav._id} className="Card">

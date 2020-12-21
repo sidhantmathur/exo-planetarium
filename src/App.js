@@ -17,6 +17,8 @@ import IndexFavs from './components/IndexFavs/IndexFavs'
 import User from './components/User/User'
 import GuestSignIn from './components/Auth/SignIn/GuestSignIn'
 import DeleteAllFavs from './components/Favs/DeleteFav/DeleteAllFavs'
+import ShowFav from './components/Favs/ShowFav/ShowFav'
+import ShowPlanet from './components/ShowPlanet/ShowPlanet'
 
 class App extends Component {
   constructor () {
@@ -75,6 +77,14 @@ class App extends Component {
 
           <AuthenticatedRoute user={user} path='/index-favs' render={() => (
             <IndexFavs msgAlert={this.msgAlert} user={user} />
+          )} />
+
+          <AuthenticatedRoute user={user} path='/favs/:favId' render={({ match }) => (
+            <ShowFav msgAlert={this.msgAlert} user={user} match={match} />
+          )} />
+
+          <AuthenticatedRoute user={user} path='/planets/:planetId' render={({ match }) => (
+            <ShowPlanet msgAlert={this.msgAlert} user={user} match={match} />
           )} />
 
           <AuthenticatedRoute user={user} path='/user' render={() => (
