@@ -13,13 +13,15 @@ import SignOut from './components/Auth/SignOut/SignOut'
 import ChangePassword from './components/Auth/ChangePassword/ChangePassword'
 
 import Randomizer from './components/Randomizer/Randomizer'
-import IndexFavs from './components/IndexFavs/IndexFavs'
+import IndexFavs from './components/Favs/IndexFavs/IndexFavs'
 import User from './components/User/User'
 import GuestSignIn from './components/Auth/SignIn/GuestSignIn'
 import DeleteAllFavs from './components/Favs/DeleteFav/DeleteAllFavs'
 import ShowFav from './components/Favs/ShowFav/ShowFav'
 import ShowPlanet from './components/ShowPlanet/ShowPlanet'
 import IndexPlanets from './components/IndexPlanets/IndexPlanets'
+import SearchPlanets from './components/SearchPlanets/SearchPlanets'
+import Search2 from './components/SearchPlanets/Search2'
 
 class App extends Component {
   constructor () {
@@ -74,6 +76,14 @@ class App extends Component {
 
           <Route path='/random' render={() => (
             <Randomizer msgAlert={this.msgAlert} user={user} />
+          )} />
+
+          <Route path='/search' render={() => (
+            <SearchPlanets msgAlert={this.msgAlert} user={user} />
+          )} />
+
+          <Route path='/search2' render={() => (
+            <Search2 msgAlert={this.msgAlert} user={user} />
           )} />
 
           <AuthenticatedRoute user={user} path='/index-favs' render={() => (
