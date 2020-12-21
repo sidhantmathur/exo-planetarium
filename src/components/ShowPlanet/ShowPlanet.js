@@ -6,6 +6,10 @@ import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
 import ListGroupItem from 'react-bootstrap/ListGroupItem'
 
+// import Chart from 'chart.js'
+
+import PlanetGraph from '../PlanetGraph/PlanetGraph'
+
 const ShowPlanet = (props) => {
   const [planet, setPlanet] = useState(null)
 
@@ -47,6 +51,20 @@ const ShowPlanet = (props) => {
               </ListGroup>
             </Card.Body>
           </Card>
+          <PlanetGraph
+            name={planet.name}
+            orbit={planet.orbit}
+            orbitPeriod={planet.orbit_period}
+            temp={planet.temp}
+            radiusE={planet.radius_e}
+            massE={planet.mass_e}
+            density={planet.density}
+            discovered={planet.discovered}
+          />
+          {/* <canvas
+            id='planetChart'
+            ref={this.chartRef}
+          /> */}
         </div>
       ) : 'Loading...'}
     </div>

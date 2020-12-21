@@ -94,11 +94,11 @@ class App extends Component {
             <ShowFav msgAlert={this.msgAlert} user={user} match={match} />
           )} />
 
-          <AuthenticatedRoute user={user} path='/index-planets' render={() => (
+          <Route user={user} path='/index-planets' render={() => (
             <IndexPlanets msgAlert={this.msgAlert} user={user} />
           )} />
 
-          <AuthenticatedRoute user={user} path='/planets/:planetId' render={({ match }) => (
+          <Route user={user} path='/planets/:planetId' render={({ match }) => (
             <ShowPlanet msgAlert={this.msgAlert} user={user} match={match} />
           )} />
 

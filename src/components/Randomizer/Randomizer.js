@@ -7,6 +7,7 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import ListGroupItem from 'react-bootstrap/ListGroupItem'
 import Button from 'react-bootstrap/Button'
 import CreateFav from '../Favs/CreateFav/CreateFav'
+import PlanetGraph from '../PlanetGraph/PlanetGraph'
 
 const RandomPlanet = (props) => {
   const [planet, setPlanet] = useState(null)
@@ -57,35 +58,49 @@ const RandomPlanet = (props) => {
   return (
     <div>
       {planet ? (
-        <div>
-          <Link to="/sign-in">Sign In</Link>
-          <Card key={planet._id} className="mb-2 mt-2" style={{ width: '500px' }}>
-            <Card.Body>
-              <Card.Title>
-                {planet.name}
-              </Card.Title>
-              <ListGroup variant="flush">
-                <ListGroupItem>Orbit:{planet.orbit}</ListGroupItem>
-                <ListGroupItem>Orbit period:{planet.orbit_period}</ListGroupItem>
-                <ListGroupItem>temp:{planet.temp}</ListGroupItem>
-                <ListGroupItem>radius: {planet.radius_e + ' earths'}</ListGroupItem>
-                <ListGroupItem>mass: {planet.mass_e + ' earths'}</ListGroupItem>
-                <ListGroupItem>density: {planet.density + 'g/cm cubed'}</ListGroupItem>
-                <ListGroupItem>discovered:{planet.discovered}</ListGroupItem>
-              </ListGroup>
+        <div className='row'>
+          <div className='col-6'>
+            <Link to="/sign-in">Sign In</Link>
+            <Card key={planet._id} className="mb-2 mt-2" style={{ width: '500px' }}>
               <Card.Body>
-                <Button onClick={randomize}>Randomize</Button>
-                <Button className="Button" variant="outline-info" href={'#planets/' + planet._id}>See More</Button>
+                <Card.Title>
+                  {planet.name}
+                </Card.Title>
+                <ListGroup variant="flush">
+                  <ListGroupItem>Orbit:{planet.orbit}</ListGroupItem>
+                  <ListGroupItem>Orbit period:{planet.orbit_period}</ListGroupItem>
+                  <ListGroupItem>temp:{planet.temp}</ListGroupItem>
+                  <ListGroupItem>radius: {planet.radius_e + ' earths'}</ListGroupItem>
+                  <ListGroupItem>mass: {planet.mass_e + ' earths'}</ListGroupItem>
+                  <ListGroupItem>density: {planet.density + 'g/cm cubed'}</ListGroupItem>
+                  <ListGroupItem>discovered:{planet.discovered}</ListGroupItem>
+                </ListGroup>
+                <Card.Body>
+                  <Button onClick={randomize}>Randomize</Button>
+                  <Button className="Button" variant="outline-info" href={'#planets/' + planet._id}>See More</Button>
+                </Card.Body>
+                {(user) ? (
+                  <CreateFav
+                    user={user}
+                    plName={planet.name}
+                    plId={planet._id}
+                  />
+                ) : ''}
               </Card.Body>
-              {(user) ? (
-                <CreateFav
-                  user={user}
-                  plName={planet.name}
-                  plId={planet._id}
-                />
-              ) : ''}
-            </Card.Body>
-          </Card>
+            </Card>
+          </div>
+          <div className='col-6'>
+            <PlanetGraph
+              name={planet.name}
+              orbit={planet.orbit}
+              orbitPeriod={planet.orbit_period}
+              temp={planet.temp}
+              radiusE={planet.radius_e}
+              massE={planet.mass_e}
+              density={planet.density}
+              discovered={planet.discovered}
+            />
+          </div>
         </div>
       ) : 'Loading...'}
     </div>
