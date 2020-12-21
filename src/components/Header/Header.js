@@ -11,6 +11,8 @@ const authenticatedOptions = (
     <Nav.Link href="#user">User</Nav.Link>
     <Nav.Link href="#random">Random</Nav.Link>
     <Nav.Link href="#index-favs">Favs List</Nav.Link>
+    <Nav.Link href="#index-planets">Planets List</Nav.Link>
+
   </Fragment>
 )
 
@@ -23,7 +25,8 @@ const unauthenticatedOptions = (
 
 const alwaysOptions = (
   <Fragment>
-    <Nav.Link href="#/">Home</Nav.Link>
+    {/* <Nav.Link href="#/">Home</Nav.Link> */}
+    <Nav.Link href="#search">Search</Nav.Link>
   </Fragment>
 )
 
