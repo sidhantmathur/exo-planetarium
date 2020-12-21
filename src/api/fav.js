@@ -71,3 +71,13 @@ export const updateFav = (user, form, favId) => {
     }
   })
 }
+
+export const deleteAllFavs = (user) => {
+  return axios({
+    url: apiUrl + '/favs-del-all',
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Token token=${user.token}`
+    }
+  })
+}

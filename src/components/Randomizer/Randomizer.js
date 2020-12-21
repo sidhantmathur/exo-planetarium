@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import { randPlanet } from '../../api/planet'
 // import { createFav } from '../../api/fav'
 import Card from 'react-bootstrap/Card'
@@ -58,6 +58,7 @@ const RandomPlanet = (props) => {
     <div>
       {planet ? (
         <div>
+          <Link to="/sign-in">Sign In</Link>
           <Card key={planet._id} className="mb-2 mt-2" style={{ width: '500px' }}>
             <Card.Body>
               <Card.Title>
@@ -72,7 +73,9 @@ const RandomPlanet = (props) => {
                 <ListGroupItem>density: {planet.density + 'g/cm cubed'}</ListGroupItem>
                 <ListGroupItem>discovered:{planet.discovered}</ListGroupItem>
               </ListGroup>
-              <Button onClick={randomize}>Randomize</Button>
+              <Card.Body>
+                <Button onClick={randomize}>Randomize</Button>
+              </Card.Body>
               {(user) ? (
                 <CreateFav
                   user={user}
