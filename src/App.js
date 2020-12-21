@@ -13,6 +13,7 @@ import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 
 import Randomizer from './components/Randomizer/Randomizer'
+import IndexFavs from './components/IndexFavs/IndexFavs'
 
 class App extends Component {
   constructor () {
@@ -63,6 +64,11 @@ class App extends Component {
           <Route path='/random' render={() => (
             <Randomizer msgAlert={this.msgAlert} user={user} />
           )} />
+
+          <AuthenticatedRoute user={user} path='/index-favs' render={() => (
+            <IndexFavs msgAlert={this.msgAlert} user={user} />
+          )} />
+
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />

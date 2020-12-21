@@ -1,51 +1,58 @@
-import React, { useState } from 'react'
+import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { createFav } from '../../api/fav'
+// import messages from '../AutoDismissAlert/messages'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
-const CreateFav = (props) => {
-  const [planet, name] = useState([])
-  const { user, msgAlert } = props
+class CreateFav extends Component {
+  constructor () {
+    super()
 
-  function favourite () {
-    console.log(user, name)
-    createFav(user, name, planet.title)
-      .catch(err => {
-        msgAlert({
-          heading: 'Show Planet Failed',
-          message: 'Error code: ' + err.message,
-          variant: 'danger'
-        })
-      })
-      .catch(err => {
-        msgAlert({
-          heading: 'Deletion Failed',
-          message: 'Something went wrong: ' + err.message,
-          variant: 'danger'
-        })
+    this.state = {
+      title: 'pl title',
+      name: 'pl name'
+    }
+  }
+
+  handleChange = event => this.setState({
+    [event.target.name]: event.target.value
+  })
+
+  onCreateFav = event => {
+    event.preventDefault()
+
+    const { user } = this.props
+
+    createFav(this.state, user)
+      .then(() => console.log('fav success'))
+      .catch(error => {
+        this.setState({ title: 'asdfasdf' })
+        console.log(error)
       })
   }
 
-  return (
-    <div>
-      {planet ? (
-        <Form onSubmit={favourite}>
+  render () {
+    const { title, name } = this.state
+
+    return (
+      <div>
+        <Form onSubmit={this.onCreateFav}>
           <Form.Control
-            readOnly
-            value='asdfasdf'
+            value={title}
             name="title"
+            onChange={this.handleChange}
           />
           <Form.Control
-            readOnly
             value={name}
             name="name"
+            onChange={this.handleChange}
           />
           <Button type="submit">Favourite</Button>
         </Form>
-      ) : 'Loading...'}
-    </div>
-  )
+      </div>
+    )
+  }
 }
 
 export default withRouter(CreateFav)

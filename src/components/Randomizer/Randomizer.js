@@ -54,25 +54,6 @@ const RandomPlanet = (props) => {
     console.log(planet)
   }
 
-  // function favourite () {
-  //   console.log(user)
-  //   createFav(user, planet.name, planet.title)
-  //     .catch(err => {
-  //       msgAlert({
-  //         heading: 'Show Planet Failed',
-  //         message: 'Error code: ' + err.message,
-  //         variant: 'danger'
-  //       })
-  //     })
-  //     .catch(err => {
-  //       msgAlert({
-  //         heading: 'Deletion Failed',
-  //         message: 'Something went wrong: ' + err.message,
-  //         variant: 'danger'
-  //       })
-  //     })
-  // }
-
   return (
     <div>
       {planet ? (
@@ -92,25 +73,12 @@ const RandomPlanet = (props) => {
                 <ListGroupItem>discovered:{planet.discovered}</ListGroupItem>
               </ListGroup>
               <Button onClick={randomize}>Randomize</Button>
-
-              <CreateFav
-                user={user}
-                name={planet.name}
-              />
-
-              {/* <Form onSubmit={favourite}>
-                <Form.Control
-                  readOnly
-                  value='asdfasdf'
-                  name="title"
+              {(user) ? (
+                <CreateFav
+                  user={user}
+                  name={planet.name}
                 />
-                <Form.Control
-                  readOnly
-                  value={planet.name}
-                  name="name"
-                />
-                <Button type="submit">Favourite</Button>
-              </Form> */}
+              ) : ''}
             </Card.Body>
           </Card>
         </div>
