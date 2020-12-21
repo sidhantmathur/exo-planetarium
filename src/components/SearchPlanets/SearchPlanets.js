@@ -9,6 +9,8 @@ import {
 } from 'react-instantsearch-dom'
 // import Content from './Content'
 
+import Hit from './Hit'
+
 const searchClient = algoliasearch(
   'ZY0B7OIB0M',
   'daf73b9b9a5564ae2818315242ecd34d'
@@ -31,7 +33,7 @@ class SearchPlanets extends Component {
           {/* Widgets */}
           <SearchBox />
           {/* <Content /> */}
-          <Hits />
+          <Hits hitComponent={Hit}/>
         </InstantSearch>
       </div>
     )
