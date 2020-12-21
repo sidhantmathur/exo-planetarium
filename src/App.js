@@ -16,6 +16,7 @@ import Randomizer from './components/Randomizer/Randomizer'
 import IndexFavs from './components/IndexFavs/IndexFavs'
 import User from './components/User/User'
 import GuestSignIn from './components/Auth/SignIn/GuestSignIn'
+import DeleteAllFavs from './components/Favs/DeleteFav/DeleteAllFavs'
 
 class App extends Component {
   constructor () {
@@ -78,6 +79,10 @@ class App extends Component {
 
           <AuthenticatedRoute user={user} path='/user' render={() => (
             <User user={user} />
+          )} />
+
+          <AuthenticatedRoute user={user} path='/delete-all-favs' render={() => (
+            <DeleteAllFavs msgAlert={this.msgAlert} user={user} />
           )} />
 
           <Route path='/sign-up' render={() => (
