@@ -7,6 +7,8 @@ import messages from '../AutoDismissAlert/messages'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
+import GuestSignIn from './GuestSignIn'
+
 class SignIn extends Component {
   constructor () {
     super()
@@ -29,7 +31,7 @@ class SignIn extends Component {
     signIn(this.state)
       .then(res => setUser(res.data.user))
       .then(() => msgAlert({
-        heading: 'Sign In Success',
+        heading: 'Welcome back!',
         message: messages.signInSuccess,
         variant: 'success'
       }))
@@ -47,19 +49,21 @@ class SignIn extends Component {
   render () {
     const { email, password } = this.state
 
+    const { msgAlert, setUser } = this.props
+
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
           <h3>Sign In</h3>
           <Form onSubmit={this.onSignIn}>
             <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Email Address</Form.Label>
               <Form.Control
                 required
                 type="email"
                 name="email"
                 value={email}
-                placeholder="Enter email"
+                placeholder="Enter Email"
                 onChange={this.handleChange}
               />
             </Form.Group>
@@ -78,9 +82,11 @@ class SignIn extends Component {
               variant="primary"
               type="submit"
             >
-              Submit
+              Sign In
             </Button>
           </Form>
+          <Button className="pl-0" variant="link" href="#sign-up">Sign Up</Button>
+          <GuestSignIn msgAlert={msgAlert} setUser={setUser} />
         </div>
       </div>
     )
