@@ -14,6 +14,8 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 
 import Randomizer from './components/Randomizer/Randomizer'
 import IndexFavs from './components/IndexFavs/IndexFavs'
+import User from './components/User/User'
+import GuestSignIn from './components/SignIn/GuestSignIn'
 
 class App extends Component {
   constructor () {
@@ -61,12 +63,21 @@ class App extends Component {
           />
         ))}
         <main className="container">
+
+          <Route exact path='/' render={() => (
+            <GuestSignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+          )} />
+
           <Route path='/random' render={() => (
             <Randomizer msgAlert={this.msgAlert} user={user} />
           )} />
 
           <AuthenticatedRoute user={user} path='/index-favs' render={() => (
             <IndexFavs msgAlert={this.msgAlert} user={user} />
+          )} />
+
+          <AuthenticatedRoute user={user} path='/user' render={() => (
+            <User user={user} />
           )} />
 
           <Route path='/sign-up' render={() => (
