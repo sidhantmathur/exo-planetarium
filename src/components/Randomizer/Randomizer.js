@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 import { randPlanet } from '../../api/planet'
+import { createFav } from '../../api/fav'
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
 import ListGroupItem from 'react-bootstrap/ListGroupItem'
 import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
 
 const RandomPlanet = (props) => {
   const [planet, setPlanet] = useState(null)
@@ -53,27 +55,22 @@ const RandomPlanet = (props) => {
   }
 
   function favourite () {
-
-    // api call create fav
-
-    // randPlanet(user, match.params.planetId)
-    //   .then(res => {
-    //     setPlanet(res.data.planet)
-    //   })
-    //   .catch(err => {
-    //     msgAlert({
-    //       heading: 'Show Planet Failed',
-    //       message: 'Error code: ' + err.message,
-    //       variant: 'danger'
-    //     })
-    //   })
-    //   .catch(err => {
-    //     msgAlert({
-    //       heading: 'Deletion Failed',
-    //       message: 'Something went wrong: ' + err.message,
-    //       variant: 'danger'
-    //     })
-    //   })
+    console.log(user)
+    createFav(user, planet, match.params.name)
+      .catch(err => {
+        msgAlert({
+          heading: 'Show Planet Failed',
+          message: 'Error code: ' + err.message,
+          variant: 'danger'
+        })
+      })
+      .catch(err => {
+        msgAlert({
+          heading: 'Deletion Failed',
+          message: 'Something went wrong: ' + err.message,
+          variant: 'danger'
+        })
+      })
   }
 
   return (
@@ -95,7 +92,19 @@ const RandomPlanet = (props) => {
                 <ListGroupItem>discovered:{planet.discovered}</ListGroupItem>
               </ListGroup>
               <Button onClick={randomize}>Randomize</Button>
-              <Button onClick={favourite}>Favourite</Button>
+              <Form onSubmit={favourite}>
+                <Form.Control
+                  readOnly
+                  value={planet.title}
+                  name="title"
+                />
+                <Form.Control
+                  readOnly
+                  value={planet.name}
+                  name="name"
+                />
+                <Button type="submit">Favourite</Button>
+              </Form>
             </Card.Body>
           </Card>
         </div>

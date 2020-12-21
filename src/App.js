@@ -61,7 +61,7 @@ class App extends Component {
         ))}
         <main className="container">
           <Route path='/random' render={() => (
-            <Randomizer msgAlert={this.msgAlert} setUser={this.setUser} />
+            <Randomizer msgAlert={this.msgAlert} user={user} />
           )} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
