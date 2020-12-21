@@ -9,10 +9,10 @@ import ListGroupItem from 'react-bootstrap/ListGroupItem'
 const ShowPlanet = (props) => {
   const [planet, setPlanet] = useState(null)
 
-  const { match } = props
+  const { planetId } = props
 
   useEffect(() => {
-    showPlanet(match.params.planetId)
+    showPlanet(planetId)
       .then(res => {
         setPlanet(res.data.planet)
       })
