@@ -11,7 +11,7 @@ class CreateFav extends Component {
 
     this.state = {
       title: '',
-      plName: this.props.plName
+      plName: this.props.plId
     }
   }
 
@@ -33,9 +33,9 @@ class CreateFav extends Component {
   }
 
   render () {
-    const { plName } = this.props
+    const { plId, plName } = this.props
     const { title } = this.state
-    // console.log(plName)
+    console.log(plName)
 
     return (
       <div>
@@ -46,7 +46,7 @@ class CreateFav extends Component {
             onChange={this.handleChange}
           />
           <Form.Control
-            value={plName}
+            value={plId}
             name="plName"
             onChange={this.handleChange}
           />

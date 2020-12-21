@@ -80,6 +80,7 @@ const RandomPlanet = (props) => {
                 <CreateFav
                   user={user}
                   plName={planet.name}
+                  plId={planet._id}
                 />
               ) : ''}
             </Card.Body>
