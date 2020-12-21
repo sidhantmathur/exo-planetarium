@@ -6,12 +6,12 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
 class CreateFav extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
 
     this.state = {
-      title: 'pl title',
-      name: 'pl name'
+      title: '',
+      plName: this.props.plName
     }
   }
 
@@ -33,7 +33,9 @@ class CreateFav extends Component {
   }
 
   render () {
-    const { title, name } = this.state
+    const { plName } = this.props
+    const { title } = this.state
+    // console.log(plName)
 
     return (
       <div>
@@ -44,8 +46,8 @@ class CreateFav extends Component {
             onChange={this.handleChange}
           />
           <Form.Control
-            value={name}
-            name="name"
+            value={plName}
+            name="plName"
             onChange={this.handleChange}
           />
           <Button type="submit">Favourite</Button>

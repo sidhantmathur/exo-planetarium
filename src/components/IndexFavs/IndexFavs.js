@@ -38,6 +38,7 @@ class IndexFavs extends Component {
 
   render () {
     const { user } = this.props
+    console.log(this.state.favs)
     let favJsx
     if (!this.state.favs) {
       favJsx = 'Loading...'

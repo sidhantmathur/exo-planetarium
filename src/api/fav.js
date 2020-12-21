@@ -11,7 +11,7 @@ export const createFav = (form, user) => {
     data: {
       fav: {
         title: form.title,
-        name: form.name
+        name: form.plName
       }
     }
   })
