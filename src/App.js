@@ -22,6 +22,8 @@ import SearchPlanets from './components/SearchPlanets/SearchPlanets'
 import Search2 from './components/SearchPlanets/Search2'
 import UpdateFav from './components/Favs/UpdateFav/UpdateFav'
 
+// import ChHeader from './components/Header/ChHeader'
+
 class App extends Component {
   constructor () {
     super()
@@ -54,6 +56,8 @@ class App extends Component {
     return (
       <Fragment>
         <Header user={user} />
+        {/* <ChHeader /> */}
+
         {msgAlerts.map((msgAlert, index) => (
           <AutoDismissAlert
             key={index}
