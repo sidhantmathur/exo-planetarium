@@ -86,8 +86,8 @@ class App extends Component {
             <IndexFavs msgAlert={this.msgAlert} user={user} />
           )} />
 
-          <AuthenticatedRoute user={user} path='/favs/:favId' render={({ match }) => (
-            <ShowFav msgAlert={this.msgAlert} user={user} match={match} />
+          <AuthenticatedRoute user={user} path='/favs/:favId' render={({ match, history }) => (
+            <ShowFav msgAlert={this.msgAlert} user={user} match={match} history={history}/>
           )} />
 
           <AuthenticatedRoute user={user} path='/favs-update/:favId' render={({ match, history }) => (
