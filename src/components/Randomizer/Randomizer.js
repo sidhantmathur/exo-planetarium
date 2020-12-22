@@ -8,6 +8,7 @@ import ListGroupItem from 'react-bootstrap/ListGroupItem'
 import Button from 'react-bootstrap/Button'
 import CreateFav from '../Favs/CreateFav/CreateFav'
 import PlanetGraph from '../PlanetGraph/PlanetGraph'
+import PlanetCard from '../ShowPlanet/PlanetCard'
 
 const RandomPlanet = (props) => {
   const [planet, setPlanet] = useState(null)
@@ -57,6 +58,20 @@ const RandomPlanet = (props) => {
 
   return (
     <div>
+      {planet ? (
+        <PlanetCard
+          id={planet._id}
+          name={planet.pl_name}
+          orbit={planet.pl_orb}
+          orbitPeriod={planet.pl_orbper}
+          temp={planet.temp}
+          radiusE={planet.pl_rade}
+          massE={planet.pl_masse}
+          discovered={planet.dis_year}
+          facility={planet.dic_fac}
+          locale={planet.dis_loc}
+        />
+      ) : 'Loading...'}
       {planet ? (
         <div className='row'>
           {/* <div className='col-6'> */}
