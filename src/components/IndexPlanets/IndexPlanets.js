@@ -5,7 +5,10 @@ import { indexPlanets } from '../../api/planet'
 import messages from '../Util/AutoDismissAlert/messages'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import CardColumns from 'react-bootstrap/CardColumns'
+// import CardColumns from 'react-bootstrap/CardColumns'
+
+// import { SimpleGrid, Box, Heading, Badge, Button } from '@chakra-ui/react'
+import { SimpleGrid } from '@chakra-ui/react'
 
 class IndexPlanets extends Component {
   constructor () {
@@ -37,23 +40,20 @@ class IndexPlanets extends Component {
   }
 
   render () {
-    const { user } = this.props
+    // const { user } = this.props
     let planetJsx
     if (!this.state.planets) {
       planetJsx = 'Loading...'
     } else if (this.state.planets.length === 0) {
       planetJsx = 'No planets to display :('
-    } else if (!user) {
-      planetJsx = 'Log In to Planet Planets'
     } else {
-      console.log(this.state.planets)
+      // console.log(this.state.planets)
       planetJsx = this.state.planets.map(planet => (
 
         <Card key={planet._id} className="Card">
           <Card.Body>
             <Card.Text>
               {planet.pl_name}
-              {planet.dis_year}
             </Card.Text>
             <Button className="Button" variant="outline-info" href={'#planets/' + planet._id}>See More</Button>
           </Card.Body>
@@ -61,13 +61,16 @@ class IndexPlanets extends Component {
       ))
     }
 
+    // else if (!user) {
+    //   planetJsx = 'Log In to Planet Planets'
+    // }
+
     return (
       <div>
         <h1 className="display-2 text-dark">All Planets</h1>
-        <CardColumns>
+        <SimpleGrid columns={{ sm: 2, md: 3, lg: 4 }} spacing={5}>
           {planetJsx}
-        </CardColumns>
-
+        </SimpleGrid>
       </div>
     )
   }

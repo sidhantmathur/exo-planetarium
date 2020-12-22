@@ -1,25 +1,48 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // import { Highlight, Snippet } from 'react-instantsearch-dom'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import ListGroup from 'react-bootstrap/ListGroup'
-import ListGroupItem from 'react-bootstrap/ListGroupItem'
+// import Card from 'react-bootstrap/Card'
+// import Button from 'react-bootstrap/Button'
+// import ListGroup from 'react-bootstrap/ListGroup'
+// import ListGroupItem from 'react-bootstrap/ListGroupItem'
+
+import { Box, Heading, Badge, Link } from '@chakra-ui/react'
 
 export default Hit
 
 function Hit ({ hit }) {
   return (
-    <Card key={hit._id} className="Card">
-      <Card.Title>{hit.name}</Card.Title>
-      <Card.Body>
-        <ListGroup variant="flush">
-          <ListGroupItem>Orbit period:{hit.orbit_period}</ListGroupItem>
-          <ListGroupItem>discovered:{hit.discovered}</ListGroupItem>
-        </ListGroup>
-        <Button className="Button" variant="outline-info" href={'#planets/' + hit._id}>See More</Button>
-      </Card.Body>
-    </Card>
+    <Box>
+      {hit.habit === 1 ? (<Badge colorScheme="green">Habitable</Badge>) : (<Badge colorScheme="red">UninHabitable</Badge>)}
+      <Link href={hit.url}><Heading>{hit.pl_name}</Heading></Link>
+      <Box
+        mt="1"
+        fontWeight="semibold"
+        as="h4"
+        lineHeight="tight"
+        isTruncated
+      >
+        {hit.discovered}
+      </Box>
+      <Box>
+        {hit.dis_loc}
+      </Box>
+      <Box>
+        {hit.dic_fac}
+      </Box>
+    </Box>
+    // <div>
+    //   <Card key={hit._id} className="Card">
+    //     <Card.Title>{hit.pl_name}</Card.Title>
+    //     <Card.Body>
+    //       <ListGroup variant="flush">
+    //         <ListGroupItem>Orbit period:{hit.pl_orbit}</ListGroupItem>
+    //         <ListGroupItem>Facility:{hit.dic_fac}</ListGroupItem>
+    //       </ListGroup>
+    //       <Button className="Button" variant="outline-info" href={hit.url}>See More</Button>
+    //     </Card.Body>
+    //   </Card>
+    // </div>
 
   // <div>
   //   <article>

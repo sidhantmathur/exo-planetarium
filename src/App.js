@@ -19,7 +19,7 @@ import ShowFav from './components/Favs/ShowFav/ShowFav'
 import ShowPlanet from './components/ShowPlanet/ShowPlanet'
 import IndexPlanets from './components/IndexPlanets/IndexPlanets'
 import SearchPlanets from './components/SearchPlanets/SearchPlanets'
-import Search2 from './components/SearchPlanets/Search2'
+// import Search2 from './components/SearchPlanets/Search2'
 import UpdateFav from './components/Favs/UpdateFav/UpdateFav'
 
 // import ChHeader2 from './components/Header/ChHeader2'
@@ -72,7 +72,10 @@ class App extends Component {
         <main className="container">
 
           <Route exact path='/' render={() => (
-            <GuestSignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+            <Fragment>
+              <GuestSignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+              <Randomizer msgAlert={this.msgAlert} user={user} />
+            </Fragment>
           )} />
 
           <Route path='/random' render={() => (
@@ -83,9 +86,9 @@ class App extends Component {
             <SearchPlanets msgAlert={this.msgAlert} user={user} />
           )} />
 
-          <Route path='/search2' render={() => (
+          {/* <Route path='/search2' render={() => (
             <Search2 msgAlert={this.msgAlert} user={user} />
-          )} />
+          )} /> */}
 
           <AuthenticatedRoute user={user} path='/index-favs' render={() => (
             <IndexFavs msgAlert={this.msgAlert} user={user} />
@@ -99,7 +102,7 @@ class App extends Component {
             <UpdateFav msgAlert={this.msgAlert} user={user} match={match} history={history}/>
           )} />
 
-          <Route user={user} path='/index-planets' render={() => (
+          <Route user={user} path='/planets-index' render={() => (
             <IndexPlanets msgAlert={this.msgAlert} user={user} />
           )} />
 
