@@ -32,17 +32,17 @@ class PlanetGraph extends Component {
   // }
 
   render () {
-    const { name, orbit, orbitPeriod, radiusE, massE, density } = this.props
+    const { name, orbit, orbitPeriod, radiusE, massE } = this.props
 
     const size = {
-      labels: ['Radius (Earths)', 'Mass (Earths)', 'Density (g/cm^3)'],
+      labels: ['Radius (Earths)', 'Mass (Earths)'],
       datasets: [
         {
           label: name,
           backgroundColor: 'rgba(75,192,192,1)',
           borderColor: 'rgba(0,0,0,1)',
           borderWidth: 2,
-          data: [radiusE, massE, density]
+          data: [radiusE, massE]
         }
       ]
     }
@@ -55,7 +55,7 @@ class PlanetGraph extends Component {
           backgroundColor: 'rgba(75,192,192,1)',
           borderColor: 'rgba(0,0,0,1)',
           borderWidth: 2,
-          data: [orbit, orbitPeriod, radiusE, massE, density]
+          data: [orbit, orbitPeriod, radiusE, massE]
         }
       ]
     }
@@ -75,6 +75,16 @@ class PlanetGraph extends Component {
             legend: {
               display: true,
               position: 'right'
+            },
+            options: {
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true,
+                    min: 0
+                  }
+                }]
+              }
             }
           }}
         />

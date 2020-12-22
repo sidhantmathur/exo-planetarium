@@ -67,13 +67,14 @@ const RandomPlanet = (props) => {
                   {planet.name}
                 </Card.Title>
                 <ListGroup variant="flush">
-                  <ListGroupItem>Orbit:{planet.orbit}</ListGroupItem>
-                  <ListGroupItem>Orbit period:{planet.orbit_period}</ListGroupItem>
+                  <ListGroupItem>Facility:{planet.dic_fac}</ListGroupItem>
+                  <ListGroupItem>Locale:{planet.dis_loc}</ListGroupItem>
+                  <ListGroupItem>Orbit:{planet.pl_orb}</ListGroupItem>
+                  <ListGroupItem>Orbit period:{planet.pl_orbper}</ListGroupItem>
                   <ListGroupItem>temp:{planet.temp}</ListGroupItem>
-                  <ListGroupItem>radius: {planet.radius_e + ' earths'}</ListGroupItem>
-                  <ListGroupItem>mass: {planet.mass_e + ' earths'}</ListGroupItem>
-                  <ListGroupItem>density: {planet.density + 'g/cm cubed'}</ListGroupItem>
-                  <ListGroupItem>discovered:{planet.discovered}</ListGroupItem>
+                  <ListGroupItem>radius: {planet.pl_rade + ' earths'}</ListGroupItem>
+                  <ListGroupItem>mass: {planet.pl_masse + ' earths'}</ListGroupItem>
+                  <ListGroupItem>discovered:{planet.dis_year}</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
                   <Button onClick={randomize}>Randomize</Button>
@@ -82,7 +83,7 @@ const RandomPlanet = (props) => {
                 {(user) ? (
                   <CreateFav
                     user={user}
-                    plName={planet.name}
+                    plName={planet.pl_name}
                     plId={planet._id}
                   />
                 ) : ''}
@@ -91,14 +92,13 @@ const RandomPlanet = (props) => {
           </div>
           <div className='col-6'>
             <PlanetGraph
-              name={planet.name}
-              orbit={planet.orbit}
-              orbitPeriod={planet.orbit_period}
+              name={planet.pl_name}
+              orbit={planet.pl_orb}
+              orbitPeriod={planet.pl_orbper}
               temp={planet.temp}
-              radiusE={planet.radius_e}
-              massE={planet.mass_e}
-              density={planet.density}
-              discovered={planet.discovered}
+              radiusE={planet.pl_rade}
+              massE={planet.pl_masse}
+              discovered={planet.dis_year}
             />
           </div>
         </div>

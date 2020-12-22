@@ -52,8 +52,8 @@ class IndexPlanets extends Component {
         <Card key={planet._id} className="Card">
           <Card.Body>
             <Card.Text>
-              {planet.title}
-              {planet.name}
+              {planet.pl_name}
+              {planet.dis_year}
             </Card.Text>
             <Button className="Button" variant="outline-info" href={'#planets/' + planet._id}>See More</Button>
           </Card.Body>
