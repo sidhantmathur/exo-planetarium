@@ -37,7 +37,7 @@ class AutoDismissAlert extends React.Component {
     }
 
     return (
-      <chakra.Alert
+      <Alert
         dismissible
         // bg="green.200"
         show={this.state.show}
@@ -51,7 +51,7 @@ class AutoDismissAlert extends React.Component {
           {/* <AlertIcon /> */}
           <p className="alert-body">{message}</p>
         </div>
-      </chakra.Alert>
+      </Alert>
     )
   }
 }
