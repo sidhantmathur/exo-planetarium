@@ -25,7 +25,6 @@ class SearchPlanets extends Component {
   render () {
     return (
       <div>
-        <p>Some text</p>
         <InstantSearch
           indexName="dev-planets"
           searchClient={searchClient}
