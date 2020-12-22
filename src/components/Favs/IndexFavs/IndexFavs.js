@@ -53,7 +53,6 @@ class IndexFavs extends Component {
           <Card.Body>
             <Card.Text>
               {fav.title}
-              {fav.name}
             </Card.Text>
             <Button className="Button" variant="outline-info" href={'#favs/' + fav._id}>See More</Button>
           </Card.Body>
