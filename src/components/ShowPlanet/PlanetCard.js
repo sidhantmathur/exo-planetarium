@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom'
 // import ListGroup from 'react-bootstrap/ListGroup'
 // import ListGroupItem from 'react-bootstrap/ListGroupItem'
 
-import { SimpleGrid, Box, Table, Thead, Tbody, Tr, Th, Td, TableCaption, Heading } from '@chakra-ui/react'
+import { SimpleGrid, Box, Table, Thead, Tbody, Tr, Th, Td, TableCaption, Heading, Badge, Stat, StatLabel, StatNumber, StatHelpText } from '@chakra-ui/react'
 
 import PlanetGraph from '../PlanetGraph/PlanetGraph'
 
@@ -19,11 +19,12 @@ class PlanetCard extends Component {
   }
 
   render () {
-    const { id, name, orbit, orbitPeriod, temp, radiusE, massE, discovered, facility, locale } = this.props
+    const { id, name, orbit, orbitPeriod, temp, radiusE, massE, discovered, facility, locale, habit } = this.props
 
     return (
       <SimpleGrid minChildWidth="120px" spacing="40px">
         <Box id={id}>
+          {habit === 1 ? (<Badge colorScheme="green">Habitable</Badge>) : (<Badge colorScheme="red">UninHabitable</Badge>)}
           <Heading fontSize="3xl">{name}</Heading>
           <Table variant="striped">
             <TableCaption>{name}</TableCaption>
@@ -35,7 +36,7 @@ class PlanetCard extends Component {
               </Tr>
             </Thead>
             <Tbody>
-              <Tr>
+              {/* <Tr>
                 <Td>Facility</Td>
                 <Td>{facility}</Td>
                 <Td></Td>
@@ -49,7 +50,7 @@ class PlanetCard extends Component {
                 <Td>Locale</Td>
                 <Td>{locale}</Td>
                 <Td></Td>
-              </Tr>
+              </Tr> */}
               <Tr>
                 <Td>Orbit</Td>
                 <Td>{orbit}</Td>
@@ -104,6 +105,11 @@ class PlanetCard extends Component {
             massE={massE}
             discovered={discovered}
           />
+          <Stat>
+            <StatLabel>Discovered from {locale} at</StatLabel>
+            <StatNumber>{facility}</StatNumber>
+            <StatHelpText>{discovered}</StatHelpText>
+          </Stat>
         </Box>
       </SimpleGrid>
     )

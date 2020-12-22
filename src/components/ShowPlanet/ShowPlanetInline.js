@@ -32,12 +32,13 @@ const ShowPlanet = (props) => {
           name={planet.pl_name}
           orbit={planet.pl_orb}
           orbitPeriod={planet.pl_orbper}
-          temp={planet.temp}
+          temp={planet.pl_temp}
           radiusE={planet.pl_rade}
           massE={planet.pl_masse}
           discovered={planet.dis_year}
           facility={planet.dic_fac}
           locale={planet.dis_loc}
+          habit={planet.habit}
         />
       ) : 'Loading...'}
     </div>
