@@ -2,8 +2,6 @@ import React, { Component, Fragment } from 'react'
 import { Route } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
 
-// import { ChakraProvider } from '@chakra-ui/react'
-
 import AuthenticatedRoute from './components/Util/AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from './components/Util/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/Header/Header'
@@ -54,9 +52,6 @@ class App extends Component {
 
     return (
       <Fragment>
-        {/* <ChakraProvider>
-          <App />
-        </ChakraProvider> */}
         <Header user={user} />
         {msgAlerts.map((msgAlert, index) => (
           <AutoDismissAlert
