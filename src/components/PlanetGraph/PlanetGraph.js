@@ -35,7 +35,7 @@ class PlanetGraph extends Component {
     const { name, orbit, orbitPeriod, radiusE, massE, density } = this.props
 
     const size = {
-      labels: ['Radius in Earths', 'Mass in Earths', 'Density'],
+      labels: ['Radius (Earths)', 'Mass (Earths)', 'Density (g/cm^3)'],
       datasets: [
         {
           label: name,
@@ -48,7 +48,7 @@ class PlanetGraph extends Component {
     }
 
     const data = {
-      labels: ['Orbit', 'Orbit Period', 'Radius in Earths', 'Mass in Earths', 'Density'],
+      labels: ['Orbit (AUs)', 'Orbit Period (days)', 'Radius (Earths)', 'Mass (Earths)', 'Density (g/cm**3)'],
       datasets: [
         {
           label: name,
