@@ -27,7 +27,7 @@ class CreateFav extends Component {
     createFav(this.state, user)
       .then(() => console.log('fav success'))
       .catch(error => {
-        this.setState({ title: 'asdfasdf' })
+        this.setState({ title: '' })
         console.log(error)
       })
   }
@@ -47,6 +47,7 @@ class CreateFav extends Component {
           />
           <Form.Control
             value={plId}
+            type="hidden"
             name="plName"
             onChange={this.handleChange}
           />
