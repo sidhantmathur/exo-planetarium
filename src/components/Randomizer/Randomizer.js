@@ -2,20 +2,22 @@ import React, { useState, useEffect, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import { randPlanet } from '../../api/planet'
 // import { createFav } from '../../api/fav'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+// import Card from 'react-bootstrap/Card'
+// import Button from 'react-bootstrap/Button'
 import CreateFav from '../Favs/CreateFav/CreateFav'
 import PlanetCard from '../ShowPlanet/PlanetCard'
 
 import {
+  Button,
+  Box,
+  Link,
   Modal,
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
-  ModalBody,
   ModalCloseButton,
-  useDisclosure
+  useDisclosure,
+  useColorMode
 } from '@chakra-ui/react'
 
 const RandomPlanet = (props) => {
@@ -64,6 +66,7 @@ const RandomPlanet = (props) => {
     console.log(planet)
   }
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const { colorMode, toggleColorMode } = useColorMode()
 
   return (
     <div>
@@ -82,9 +85,16 @@ const RandomPlanet = (props) => {
             locale={planet.dis_loc}
             habit={planet.habit}
           />
-          <Card>
-            <Button onClick={randomize}>Randomize</Button>
-            <Button className="Button" variant="outline-info" href={'#planets/' + planet._id}>See More</Button>
+          <Box>
+            <Button onClick={randomize}>Randomize</Button>{' '}
+            <Link href={'#planets/' + planet._id} color="teal.500">
+              <Button size="md" colorScheme="teal" variant="outline">See More</Button>{' '}
+            </Link>
+
+            <Button onClick={toggleColorMode}>
+              Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+            </Button>
+
             {(user) ? (
               <Fragment>
                 <Button onClick={onOpen}>Open Modal</Button>
@@ -92,27 +102,18 @@ const RandomPlanet = (props) => {
                 <Modal isOpen={isOpen} onClose={onClose}>
                   <ModalOverlay />
                   <ModalContent>
-                    <ModalHeader>Save this Planet</ModalHeader>
+                    <ModalHeader>Modal Title</ModalHeader>
                     <ModalCloseButton />
-                    <ModalBody>
-                      <CreateFav
-                        user={user}
-                        plName={planet.pl_name}
-                        plId={planet._id}
-                      />
-                    </ModalBody>
-
-                    <ModalFooter>
-                      <Button colorScheme="blue" mr={3} onClick={onClose}>
-                        Close
-                      </Button>
-                      <Button variant="ghost">Secondary Action</Button>
-                    </ModalFooter>
+                    <CreateFav
+                      user={user}
+                      plName={planet.pl_name}
+                      plId={planet._id}
+                    />
                   </ModalContent>
                 </Modal>
               </Fragment>
             ) : ''}
-          </Card>
+          </Box>
         </div>
       ) : 'Loading...'}
     </div>

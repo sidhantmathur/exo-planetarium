@@ -5,7 +5,9 @@ import algoliasearch from 'algoliasearch/lite'
 import {
   InstantSearch,
   SearchBox,
-  Hits
+  Hits,
+  PoweredBy,
+  Configure
 } from 'react-instantsearch-dom'
 // import Content from './Content'
 
@@ -29,10 +31,16 @@ class SearchPlanets extends Component {
           indexName="dev-planets"
           searchClient={searchClient}
         >
-          {/* Widgets */}
-          <SearchBox />
-          {/* <Content /> */}
-          <Hits hitComponent={Hit}/>
+          <main className="search-container">
+            <Configure
+              hitsPerPage={12}
+            />
+            <PoweredBy />
+
+            <SearchBox />
+            <Hits hitComponent={Hit}/>
+
+          </main>
         </InstantSearch>
       </div>
     )

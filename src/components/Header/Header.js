@@ -11,7 +11,7 @@ const authenticatedOptions = (
     <Nav.Link href="#user">User</Nav.Link>
     <Nav.Link href="#random">Random</Nav.Link>
     <Nav.Link href="#index-favs">Favs List</Nav.Link>
-    <Nav.Link href="#index-planets">Planets List</Nav.Link>
+    <Nav.Link href="#planets-index">Planets List</Nav.Link>
 
   </Fragment>
 )
