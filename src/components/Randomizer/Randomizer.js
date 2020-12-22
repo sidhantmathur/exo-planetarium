@@ -59,6 +59,7 @@ const RandomPlanet = (props) => {
     <div>
       {planet ? (
         <div className='row'>
+          {/* <div className='col-6'> */}
           <div className='col-6'>
             <Link to="/sign-in">Sign In</Link>
             <Card key={planet._id} className="mb-2 mt-2" style={{ width: '500px' }}>

@@ -72,19 +72,18 @@ class PlanetGraph extends Component {
               text: 'Planet Size',
               fontSize: 20
             },
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    suggestedMin: 0
+                  }
+                }
+              ]
+            },
             legend: {
               display: true,
               position: 'right'
-            },
-            options: {
-              scales: {
-                yAxes: [{
-                  ticks: {
-                    beginAtZero: true,
-                    min: 0
-                  }
-                }]
-              }
             }
           }}
         />

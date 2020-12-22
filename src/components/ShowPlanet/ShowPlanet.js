@@ -60,10 +60,6 @@ const ShowPlanet = (props) => {
             massE={planet.pl_masse}
             discovered={planet.dis_year}
           />
-          {/* <canvas
-            id='planetChart'
-            ref={this.chartRef}
-          /> */}
         </div>
       ) : 'Loading...'}
     </div>
