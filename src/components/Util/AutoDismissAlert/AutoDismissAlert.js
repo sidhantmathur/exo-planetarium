@@ -1,6 +1,8 @@
 import React from 'react'
 import Alert from 'react-bootstrap/Alert'
 
+// import { chakra } from '@chakra-ui/react'
+
 import './AutoDismissAlert.scss'
 
 class AutoDismissAlert extends React.Component {
@@ -35,8 +37,9 @@ class AutoDismissAlert extends React.Component {
     }
 
     return (
-      <Alert
+      <chakra.Alert
         dismissible
+        // bg="green.200"
         show={this.state.show}
         variant={variant}
         onClose={this.handleClose}
@@ -45,9 +48,10 @@ class AutoDismissAlert extends React.Component {
           <Alert.Heading>
             {heading}
           </Alert.Heading>
+          {/* <AlertIcon /> */}
           <p className="alert-body">{message}</p>
         </div>
-      </Alert>
+      </chakra.Alert>
     )
   }
 }

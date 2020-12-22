@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom'
 // import ListGroup from 'react-bootstrap/ListGroup'
 // import ListGroupItem from 'react-bootstrap/ListGroupItem'
 
-import { SimpleGrid, Box, Table, Thead, Tbody, Tr, Th, Td, TableCaption, Text } from '@chakra-ui/react'
+import { SimpleGrid, Box, Table, Thead, Tbody, Tr, Th, Td, TableCaption, Heading } from '@chakra-ui/react'
 
 import PlanetGraph from '../PlanetGraph/PlanetGraph'
 
@@ -24,7 +24,7 @@ class PlanetCard extends Component {
     return (
       <SimpleGrid minChildWidth="120px" spacing="40px">
         <Box id={id}>
-          <Text fontSize="3xl">{name}</Text>
+          <Heading fontSize="3xl">{name}</Heading>
           <Table variant="striped">
             <TableCaption>{name}</TableCaption>
             <Thead>

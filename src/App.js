@@ -22,7 +22,7 @@ import SearchPlanets from './components/SearchPlanets/SearchPlanets'
 import Search2 from './components/SearchPlanets/Search2'
 import UpdateFav from './components/Favs/UpdateFav/UpdateFav'
 
-// import ChHeader from './components/Header/ChHeader'
+// import ChHeader2 from './components/Header/ChHeader2'
 
 class App extends Component {
   constructor () {
@@ -56,7 +56,8 @@ class App extends Component {
     return (
       <Fragment>
         <Header user={user} />
-        {/* <ChHeader /> */}
+
+        {/* <ChHeader2 user={user} /> */}
 
         {msgAlerts.map((msgAlert, index) => (
           <AutoDismissAlert
