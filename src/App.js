@@ -20,6 +20,7 @@ import ShowPlanet from './components/ShowPlanet/ShowPlanet'
 import IndexPlanets from './components/IndexPlanets/IndexPlanets'
 import SearchPlanets from './components/SearchPlanets/SearchPlanets'
 import Search2 from './components/SearchPlanets/Search2'
+import UpdateFav from './components/Favs/UpdateFav/UpdateFav'
 
 class App extends Component {
   constructor () {
@@ -87,6 +88,10 @@ class App extends Component {
 
           <AuthenticatedRoute user={user} path='/favs/:favId' render={({ match }) => (
             <ShowFav msgAlert={this.msgAlert} user={user} match={match} />
+          )} />
+
+          <AuthenticatedRoute user={user} path='/favs-update/:favId' render={({ match, history }) => (
+            <UpdateFav msgAlert={this.msgAlert} user={user} match={match} history={history}/>
           )} />
 
           <Route user={user} path='/index-planets' render={() => (
