@@ -1,5 +1,4 @@
 // import React, { Fragment } from 'react'
-// import { Box, Flex, Link, Image, Text } from '@chakra-ui/core'
 
 // const NavLink = ({ children, ...props }) => (
 //   <Link px={2} color="white" {...props}>
