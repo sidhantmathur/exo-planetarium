@@ -65,7 +65,7 @@ class IndexFavs extends Component {
 
     return (
       <div>
-        <Heading>Fav Planets</Heading>
+        <Heading mb={3} mt={3}>Saved Planets</Heading>
         <SimpleGrid columns={3} spacing={5}>
           {favJsx}
         </SimpleGrid>
