@@ -78,9 +78,7 @@ class App extends Component {
 
           <Route exact path='/' render={() => (
             <Fragment>
-              {/* <GuestSignIn msgAlert={this.msgAlert} setUser={this.setUser} />
-              <Randomizer msgAlert={this.msgAlert} user={user} /> */}
-              <LandingPage />
+              <LandingPage user={user}/>
             </Fragment>
           )} />
 
