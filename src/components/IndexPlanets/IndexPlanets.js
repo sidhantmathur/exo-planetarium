@@ -3,12 +3,9 @@ import { withRouter } from 'react-router-dom'
 
 import { indexPlanets } from '../../api/planet'
 import messages from '../Util/AutoDismissAlert/messages'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
 // import CardColumns from 'react-bootstrap/CardColumns'
 
-// import { SimpleGrid, Box, Heading, Badge, Button } from '@chakra-ui/react'
-import { SimpleGrid, Heading } from '@chakra-ui/react'
+import { SimpleGrid, Box, Button, Heading, Link } from '@chakra-ui/react'
 
 class IndexPlanets extends Component {
   constructor () {
@@ -50,14 +47,19 @@ class IndexPlanets extends Component {
       // console.log(this.state.planets)
       planetJsx = this.state.planets.map(planet => (
 
-        <Card key={planet._id} className="Card">
-          <Card.Body>
-            <Card.Text>
-              {planet.pl_name}
-            </Card.Text>
-            <Button className="Button" variant="outline-info" href={'#planets/' + planet._id}>See More</Button>
-          </Card.Body>
-        </Card>
+        <Box key={planet._id} borderWidth="1px" borderRadius="lg">
+          <Box p="4">
+            <Box>
+              <Heading size="md">
+                {planet.pl_name}
+              </Heading>
+            </Box>
+            <Box mt={2}>
+              <Link href={'#planets/' + planet._id}><Button variant="solid" color="blue">See More</Button></Link>
+            </Box>
+          </Box>
+        </Box>
+
       ))
     }
 
