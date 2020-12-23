@@ -16,11 +16,12 @@ import User from './components/User/User'
 import GuestSignIn from './components/Auth/SignIn/GuestSignIn'
 import DeleteAllFavs from './components/Favs/DeleteFav/DeleteAllFavs'
 import ShowFav from './components/Favs/ShowFav/ShowFav'
-import ShowPlanet from './components/ShowPlanet/ShowPlanet'
+// import ShowPlanet from './components/ShowPlanet/ShowPlanet'
 import IndexPlanets from './components/IndexPlanets/IndexPlanets'
 import SearchPlanets from './components/SearchPlanets/SearchPlanets'
 // import Search2 from './components/SearchPlanets/Search2'
 import UpdateFav from './components/Favs/UpdateFav/UpdateFav'
+import ShowPlanetFull from './components/ShowPlanet/ShowPlanetFull'
 // import Header3 from './components/Header/Header3'
 
 // import ChHeader2 from './components/Header/ChHeader2'
@@ -109,8 +110,12 @@ class App extends Component {
           )} />
 
           <Route user={user} path='/planets/:planetId' render={({ match }) => (
-            <ShowPlanet msgAlert={this.msgAlert} user={user} match={match} />
+            <ShowPlanetFull msgAlert={this.msgAlert} user={user} match={match} />
           )} />
+
+          {/* <Route user={user} path='/planets-full/:planetId' render={({ match }) => (
+            <ShowPlanetFull msgAlert={this.msgAlert} user={user} match={match} />
+          )} /> */}
 
           <AuthenticatedRoute user={user} path='/user' render={() => (
             <User user={user} />
