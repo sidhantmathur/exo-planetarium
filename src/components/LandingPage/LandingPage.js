@@ -33,22 +33,22 @@ class LandingPage extends Component {
               <Heading size="lg" fontWeight="normal" mt={3}>Check out our neighbours!</Heading>
               <Box mt={5}>
                 <Link href='#search'>
-                  <Button size="md" colorScheme="blue" variant="outline">Search</Button>{' '}
+                  <Button size="lg" colorScheme="blue" variant="outline">Search</Button>{' '}
                 </Link>
                 <Link href='#random'>
-                  <Button size="md" colorScheme="purple" variant="outline">Random</Button>{' '}
+                  <Button size="lg" colorScheme="purple" variant="outline">Random</Button>{' '}
                 </Link>
               </Box>
               {(!user) ? (
                 <Box my={3}>
                   <Link href='#sign-up'>
-                    <Button size="md" colorScheme="green" variant="solid">Create an Account</Button>{' '}
+                    <Button size="lg" colorScheme="green" variant="solid">Create an Account</Button>{' '}
                   </Link>
                 </Box>
               ) : (
                 <Box my={3}>
                   <Link href='#index-favs'>
-                    <Button size="md" colorScheme="teal" variant="solid">Saved Planets</Button>{' '}
+                    <Button size="lg" colorScheme="teal" variant="solid">Saved Planets</Button>{' '}
                   </Link>
                 </Box>
               )}
