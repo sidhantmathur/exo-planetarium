@@ -13,7 +13,7 @@ import ChangePassword from './components/Auth/ChangePassword/ChangePassword'
 import Randomizer from './components/Randomizer/Randomizer'
 import IndexFavs from './components/Favs/IndexFavs/IndexFavs'
 import User from './components/User/User'
-import GuestSignIn from './components/Auth/SignIn/GuestSignIn'
+// import GuestSignIn from './components/Auth/SignIn/GuestSignIn'
 import DeleteAllFavs from './components/Favs/DeleteFav/DeleteAllFavs'
 import ShowFav from './components/Favs/ShowFav/ShowFav'
 // import ShowPlanet from './components/ShowPlanet/ShowPlanet'
@@ -25,6 +25,8 @@ import ShowPlanetFull from './components/ShowPlanet/ShowPlanetFull'
 // import Header3 from './components/Header/Header3'
 
 // import ChHeader2 from './components/Header/ChHeader2'
+
+import LandingPage from './components/LandingPage/LandingPage'
 
 class App extends Component {
   constructor () {
@@ -76,8 +78,9 @@ class App extends Component {
 
           <Route exact path='/' render={() => (
             <Fragment>
-              <GuestSignIn msgAlert={this.msgAlert} setUser={this.setUser} />
-              <Randomizer msgAlert={this.msgAlert} user={user} />
+              {/* <GuestSignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+              <Randomizer msgAlert={this.msgAlert} user={user} /> */}
+              <LandingPage />
             </Fragment>
           )} />
 
