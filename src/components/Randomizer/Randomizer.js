@@ -85,14 +85,14 @@ const RandomPlanet = (props) => {
             habit={planet.habit}
           />
           <Box>
-            <Button onClick={randomize}>Randomize</Button>{' '}
+            <Button colorScheme="teal" onClick={randomize}>Randomize</Button>{' '}
             <Link href={'#planets/' + planet._id} color="blue">
               <Button size="md" colorScheme="blue" variant="outline">See More</Button>{' '}
             </Link>
 
             {(user) ? (
               <Fragment>
-                <Button onClick={onOpen}>Save Planet</Button>
+                <Button colorScheme="green" onClick={onOpen}>Save Planet</Button>
 
                 <Modal isOpen={isOpen} onClose={onClose}>
                   <ModalOverlay />

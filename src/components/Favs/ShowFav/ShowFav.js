@@ -56,12 +56,12 @@ const ShowFav = (props) => {
               planetId={fav.name}
             />
             <Box>
-              <Link href={'#favs-update/' + fav._id} color="blue">
-                <Button variant="solid" href={'#favs-update/' + fav._id}>Update Fav</Button>{' '}
+              <Link href={'#favs-update/' + fav._id}>
+                <Button variant="solid" colorScheme="yellow" href={'#favs-update/' + fav._id}>Update Fav</Button>{' '}
               </Link>
-              <Button variant="solid" onClick={handleDelete}>Delete Fav</Button>{' '}
-              <Link href={'#planets/' + fav.name} color="blue">
-                <Button variant="outline">See More</Button>{' '}
+              <Button variant="solid" colorScheme="red" onClick={handleDelete}>Delete Fav</Button>{' '}
+              <Link href={'#planets/' + fav.name}>
+                <Button variant="outline" colorScheme="blue">See More</Button>{' '}
               </Link>
             </Box>
           </Box>
