@@ -7,9 +7,7 @@ import messages from '../../Util/AutoDismissAlert/messages'
 // import Form from 'react-bootstrap/Form'
 // import Button from 'react-bootstrap/Button'
 
-import {
-  Button
-} from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 
 class SignIn extends Component {
   constructor () {
