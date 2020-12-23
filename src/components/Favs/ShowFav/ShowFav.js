@@ -47,18 +47,18 @@ const ShowFav = (props) => {
   return (
     <div>
       {fav ? (
-        <Box>
-          <Box key={fav._id}>
-            <Link href={'#favs-update/' + fav._id} color="blue">
-              <Button size="md" colorScheme="blue" variant="solid" href={'#favs-update/' + fav._id}>Update Fav</Button>
-            </Link>
-            <Button size="md" colorScheme="red" variant="solid" onClick={handleDelete}>Delete Fav</Button>
-          </Box>
+        <Box key={fav._id}>
           <ShowPlanetInline
             user={user}
             match={match}
             planetId={fav.name}
           />
+          <Box>
+            <Link href={'#favs-update/' + fav._id} color="blue">
+              <Button variant="solid" href={'#favs-update/' + fav._id}>Update Fav</Button>{' '}
+            </Link>
+            <Button variant="solid" onClick={handleDelete}>Delete Fav</Button>
+          </Box>
         </Box>
       ) : 'Loading...'}
     </div>

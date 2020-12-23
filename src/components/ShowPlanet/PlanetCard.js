@@ -78,22 +78,6 @@ class PlanetCard extends Component {
               </Tr>
             </Tbody>
           </Table>
-
-          {/* <Card.Body>
-            <Card.Title>
-              {name}
-            </Card.Title>
-            <ListGroup variant="flush">
-              <ListGroupItem>Facility: {facility}</ListGroupItem>
-              <ListGroupItem>Locale: {locale}</ListGroupItem>
-              <ListGroupItem>Orbit: {orbit}</ListGroupItem>
-              <ListGroupItem>Orbit period: {orbitPeriod}</ListGroupItem>
-              <ListGroupItem>temp: {temp}</ListGroupItem>
-              <ListGroupItem>radius: {radiusE + ' earths'}</ListGroupItem>
-              <ListGroupItem>mass: {massE + ' earths'}</ListGroupItem>
-              <ListGroupItem>discovered: {discovered}</ListGroupItem>
-            </ListGroup>
-          </Card.Body> */}
         </Box>
         <Box>
           <PlanetGraph

@@ -90,10 +90,6 @@ const RandomPlanet = (props) => {
               <Button size="md" colorScheme="blue" variant="outline">See More</Button>{' '}
             </Link>
 
-            {/* <Button onClick={toggleColorMode}>
-              Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-            </Button> */}
-
             {(user) ? (
               <Fragment>
                 <Button onClick={onOpen}>Save Planet</Button>

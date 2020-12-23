@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import { showPlanet } from '../../api/planet'
 
@@ -25,7 +25,7 @@ const ShowPlanet = (props) => {
   }, [])
 
   return (
-    <div>
+    <Fragment>
       {planet ? (
         <PlanetCard
           id={planet._id}
@@ -41,7 +41,7 @@ const ShowPlanet = (props) => {
           habit={planet.habit}
         />
       ) : 'Loading...'}
-    </div>
+    </Fragment>
   )
 }
 
