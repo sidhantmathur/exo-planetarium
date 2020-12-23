@@ -4,14 +4,17 @@ import { withRouter } from 'react-router-dom'
 import algoliasearch from 'algoliasearch/lite'
 import {
   InstantSearch,
-  SearchBox,
+  // SearchBox,
   Hits,
-  PoweredBy,
+  // PoweredBy,
   Configure
 } from 'react-instantsearch-dom'
 // import Content from './Content'
 
 import Hit from './Hit'
+import CustomSearchBox from './SearchBox'
+
+import { Heading } from '@chakra-ui/react'
 
 const searchClient = algoliasearch(
   'ZY0B7OIB0M',
@@ -27,6 +30,7 @@ class SearchPlanets extends Component {
   render () {
     return (
       <div>
+        <Heading size="xl" mt={3}>Search</Heading>
         <InstantSearch
           indexName="dev-planets"
           searchClient={searchClient}
@@ -35,9 +39,9 @@ class SearchPlanets extends Component {
             <Configure
               hitsPerPage={12}
             />
-            <PoweredBy />
-
-            <SearchBox />
+            {/* <PoweredBy mt={5} /> */}
+            <CustomSearchBox />
+            {/* <SearchBox /> */}
             <Hits hitComponent={Hit}/>
 
           </main>
