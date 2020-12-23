@@ -18,7 +18,7 @@ const Header = (props) => {
       justify="space-between"
       wrap="wrap"
       padding="1.5rem"
-      bg="teal.500"
+      bg="blue"
       color="white"
       {...props}
     >

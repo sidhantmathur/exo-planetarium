@@ -21,7 +21,7 @@ import IndexPlanets from './components/IndexPlanets/IndexPlanets'
 import SearchPlanets from './components/SearchPlanets/SearchPlanets'
 // import Search2 from './components/SearchPlanets/Search2'
 import UpdateFav from './components/Favs/UpdateFav/UpdateFav'
-import Header3 from './components/Header/Header3'
+// import Header3 from './components/Header/Header3'
 
 // import ChHeader2 from './components/Header/ChHeader2'
 
@@ -57,7 +57,7 @@ class App extends Component {
     return (
       <Fragment>
         <Header user={user} />
-        <Header3 />
+        {/* <Header3 /> */}
 
         {/* <ChHeader2 user={user} /> */}
 

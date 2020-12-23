@@ -3,9 +3,10 @@ import { withRouter } from 'react-router-dom'
 
 import { indexFavs } from '../../../api/fav'
 import messages from '../../Util/AutoDismissAlert/messages'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import CardColumns from 'react-bootstrap/CardColumns'
+// import Button from 'react-bootstrap/Button'
+// import CardColumns from 'react-bootstrap/CardColumns'
+
+import { Heading, Box, Button, SimpleGrid, Link } from '@chakra-ui/react'
 
 class IndexFavs extends Component {
   constructor () {
@@ -48,25 +49,26 @@ class IndexFavs extends Component {
     } else {
       console.log(this.state.favs)
       favJsx = this.state.favs.map(fav => (
-
-        <Card key={fav._id} className="Card">
-          <Card.Body>
-            <Card.Text>
-              {fav.title}
-            </Card.Text>
-            <Button className="Button" variant="outline-info" href={'#favs/' + fav._id}>See More</Button>
-          </Card.Body>
-          <Card.Footer>Updated on {fav.createdAt.slice(0, -14)}</Card.Footer>
-        </Card>
+        <Box key={fav._id} borderWidth="1px" borderRadius="lg">
+          <Box p="4">
+            <Box>
+              <Heading size="md">
+                {fav.title}
+              </Heading>
+            </Box>
+            <Box>Updated on {fav.createdAt.slice(0, -14)}</Box>
+            <Link href={'#favs/' + fav._id}><Button variant="solid" color="blue">See More</Button></Link>
+          </Box>
+        </Box>
       ))
     }
 
     return (
       <div>
-        <h1 className="display-2 text-dark">Fav Planets</h1>
-        <CardColumns>
+        <Heading>Fav Planets</Heading>
+        <SimpleGrid columns={3} spacing={5}>
           {favJsx}
-        </CardColumns>
+        </SimpleGrid>
 
       </div>
     )

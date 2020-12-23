@@ -86,8 +86,8 @@ const RandomPlanet = (props) => {
           />
           <Box>
             <Button onClick={randomize}>Randomize</Button>{' '}
-            <Link href={'#planets/' + planet._id} color="teal.500">
-              <Button size="md" colorScheme="teal" variant="outline">See More</Button>{' '}
+            <Link href={'#planets/' + planet._id} color="blue">
+              <Button size="md" colorScheme="blue" variant="outline">See More</Button>{' '}
             </Link>
 
             {/* <Button onClick={toggleColorMode}>

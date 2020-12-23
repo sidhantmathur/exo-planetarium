@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button'
 // import CardColumns from 'react-bootstrap/CardColumns'
 
 // import { SimpleGrid, Box, Heading, Badge, Button } from '@chakra-ui/react'
-import { SimpleGrid } from '@chakra-ui/react'
+import { SimpleGrid, Heading } from '@chakra-ui/react'
 
 class IndexPlanets extends Component {
   constructor () {
@@ -67,7 +67,7 @@ class IndexPlanets extends Component {
 
     return (
       <div>
-        <h1 className="display-2 text-dark">All Planets</h1>
+        <Heading>All Planets</Heading>
         <SimpleGrid columns={{ sm: 2, md: 3, lg: 4 }} spacing={5}>
           {planetJsx}
         </SimpleGrid>

@@ -35,7 +35,7 @@ class PlanetGraph extends Component {
     const { name, orbit, orbitPeriod, radiusE, massE } = this.props
 
     const size = {
-      labels: ['Radius (Earths)', 'Mass (Earths)'],
+      labels: ['Radius', 'Mass'],
       datasets: [
         {
           label: name,

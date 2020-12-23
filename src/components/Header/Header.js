@@ -33,7 +33,7 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="dark" variant="dark" expand="md">
+  <Navbar bg="primary" variant="dark" expand="md">
     <Navbar.Brand href="#">
       Exo-Planetarium
     </Navbar.Brand>

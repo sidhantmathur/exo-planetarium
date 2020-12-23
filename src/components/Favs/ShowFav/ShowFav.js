@@ -49,8 +49,8 @@ const ShowFav = (props) => {
       {fav ? (
         <Box>
           <Box key={fav._id}>
-            <Link href={'#favs-update/' + fav._id} color="teal.500">
-              <Button size="md" colorScheme="teal" variant="solid" href={'#favs-update/' + fav._id}>Update Fav</Button>
+            <Link href={'#favs-update/' + fav._id} color="blue">
+              <Button size="md" colorScheme="blue" variant="solid" href={'#favs-update/' + fav._id}>Update Fav</Button>
             </Link>
             <Button size="md" colorScheme="red" variant="solid" onClick={handleDelete}>Delete Fav</Button>
           </Box>
