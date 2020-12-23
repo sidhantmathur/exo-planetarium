@@ -2,6 +2,8 @@ import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 
+import DarkModeButton from '../DarkMode/DarkModeButton'
+
 const authenticatedOptions = (
   <Fragment>
     {/*
@@ -31,9 +33,9 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
+  <Navbar bg="dark" variant="dark" expand="md">
     <Navbar.Brand href="#">
-      react-auth-template
+      Exo-Planetarium
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
@@ -41,6 +43,7 @@ const Header = ({ user }) => (
         { user && <span className="navbar-text mr-2">Welcome, {user.email}</span>}
         { alwaysOptions }
         { user ? authenticatedOptions : unauthenticatedOptions }
+        <DarkModeButton />
       </Nav>
     </Navbar.Collapse>
   </Navbar>

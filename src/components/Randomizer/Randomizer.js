@@ -16,8 +16,8 @@ import {
   ModalContent,
   ModalHeader,
   ModalCloseButton,
-  useDisclosure,
-  useColorMode
+  useDisclosure
+  // useColorMode
 } from '@chakra-ui/react'
 
 const RandomPlanet = (props) => {
@@ -66,7 +66,6 @@ const RandomPlanet = (props) => {
     console.log(planet)
   }
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const { colorMode, toggleColorMode } = useColorMode()
 
   return (
     <div>
@@ -91,18 +90,18 @@ const RandomPlanet = (props) => {
               <Button size="md" colorScheme="teal" variant="outline">See More</Button>{' '}
             </Link>
 
-            <Button onClick={toggleColorMode}>
+            {/* <Button onClick={toggleColorMode}>
               Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-            </Button>
+            </Button> */}
 
             {(user) ? (
               <Fragment>
-                <Button onClick={onOpen}>Open Modal</Button>
+                <Button onClick={onOpen}>Save Planet</Button>
 
                 <Modal isOpen={isOpen} onClose={onClose}>
                   <ModalOverlay />
                   <ModalContent>
-                    <ModalHeader>Modal Title</ModalHeader>
+                    <ModalHeader>Save Planet</ModalHeader>
                     <ModalCloseButton />
                     <CreateFav
                       user={user}

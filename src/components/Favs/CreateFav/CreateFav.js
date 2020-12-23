@@ -49,7 +49,7 @@ class CreateFav extends Component {
             onChange={this.handleChange}
           /> */}
           <FormControl>
-            <FormLabel>Save As: </FormLabel>
+            <FormLabel>Name: </FormLabel>
             <Input
               placeholder="Cool System"
               value={title}
@@ -63,7 +63,7 @@ class CreateFav extends Component {
             name="plName"
             onChange={this.handleChange}
           />
-          <Button onClick={this.onCreateFav} mt={2}>Favourite</Button>
+          <Button onClick={this.onCreateFav} mt={2}>Save</Button>
         </Form>
       </ModalBody>
     )
