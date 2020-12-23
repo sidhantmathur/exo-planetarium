@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button'
+
+import { Button, Box, Link, Heading, SimpleGrid } from '@chakra-ui/react'
 
 import { v4 as uuid } from 'uuid'
 
@@ -23,14 +25,37 @@ class User extends Component {
 
   render () {
     const { user } = this.props
+
     return (
       <Fragment>
-        <h1>{user.email}&apos;s Settings</h1>
-        <Button variant="info" href='#index-favs'>See Fav Planets</Button>{' '}
-        <Button variant="warning" href='#change-password'>Change Password</Button>{' '}
-        <Button variant="danger" href='#sign-out'>Sign Out</Button>{' '}
-        <Button variant="danger" href='#delete-all-favs'>Delete All Favourites</Button>{' '}
-        <Button variant="info" href='#planets-index'>See All Planets</Button>
+        <Heading size="xl">{user.email}&apos;s Settings</Heading>
+
+        <SimpleGrid columns="3">
+          <Box my={3}>
+            <Heading size="md" mb={3}>Planets</Heading>
+            <Link href='#index-favs'>
+              <Button size="md" colorScheme="teal" variant="solid">Saved Planets</Button>{' '}
+            </Link>
+            <Link href='#planets-index'>
+              <Button size="md" colorScheme="blue" variant="solid">All Planets</Button>{' '}
+            </Link>
+          </Box>
+          <Box my={3}>
+            <Heading size="md" mb={3}>Account</Heading>
+            <Link href='#sign-out'>
+              <Button size="md" colorScheme="red" variant="solid">Sign Out</Button>{' '}
+            </Link>
+            <Link href='#change-password'>
+              <Button size="md" colorScheme="yellow" variant="solid">Change Password</Button>{' '}
+            </Link>
+          </Box>
+          <Box my={3}>
+            <Heading size="md" mb={3}>Danger Zone</Heading>
+            <Link href='#delete-all-favs'>
+              <Button size="md" colorScheme="red" variant="solid">Delete All Saved Planets</Button>{' '}
+            </Link>
+          </Box>
+        </SimpleGrid>
       </Fragment>
     )
   }
