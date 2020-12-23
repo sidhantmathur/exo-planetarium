@@ -5,7 +5,8 @@ import { signUp, signIn } from '../../../api/auth'
 import messages from '../../Util/AutoDismissAlert/messages'
 
 import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+
+import { Button, FormLabel, Heading, Link } from '@chakra-ui/react'
 
 import GuestSignIn from '../SignIn/GuestSignIn'
 
@@ -55,10 +56,10 @@ class SignUp extends Component {
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Sign Up</h3>
+          <Heading>Sign Up</Heading>
           <Form onSubmit={this.onSignUp}>
             <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
+              <FormLabel>Email address</FormLabel>
               <Form.Control
                 required
                 type="email"
@@ -69,7 +70,7 @@ class SignUp extends Component {
               />
             </Form.Group>
             <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
+              <FormLabel>Password</FormLabel>
               <Form.Control
                 required
                 name="password"
@@ -80,7 +81,7 @@ class SignUp extends Component {
               />
             </Form.Group>
             <Form.Group controlId="passwordConfirmation">
-              <Form.Label>Password Confirmation</Form.Label>
+              <FormLabel>Password Confirmation</FormLabel>
               <Form.Control
                 required
                 name="passwordConfirmation"
@@ -91,13 +92,13 @@ class SignUp extends Component {
               />
             </Form.Group>
             <Button
-              variant="primary"
+              variant="solid"
               type="submit"
             >
               Submit
             </Button>
           </Form>
-          <Button className="pl-0" variant="link" href="#sign-in">Sign In</Button>
+          <Link href="#sign-in"><Button variant="link" mt={2}>Sign In</Button></Link>
           <GuestSignIn msgAlert={msgAlert} setUser={setUser} />
         </div>
       </div>

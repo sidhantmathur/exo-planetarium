@@ -30,11 +30,11 @@ class User extends Component {
       <Fragment>
         <Heading size="xl">{user.email}&apos;s Settings</Heading>
 
-        <SimpleGrid columns="3">
+        <SimpleGrid columns={{ sm: 2, md: 3 }} spacing={10}>
           <Box my={3}>
             <Heading size="md" mb={3}>Planets</Heading>
             <Link href='#index-favs'>
-              <Button size="md" colorScheme="teal" variant="solid">Saved Planets</Button>{' '}
+              <Button mb={1} size="md" colorScheme="teal" variant="solid">Saved Planets</Button>{' '}
             </Link>
             <Link href='#planets-index'>
               <Button size="md" colorScheme="blue" variant="solid">All Planets</Button>{' '}
@@ -43,7 +43,7 @@ class User extends Component {
           <Box my={3}>
             <Heading size="md" mb={3}>Account</Heading>
             <Link href='#sign-out'>
-              <Button size="md" colorScheme="red" variant="solid">Sign Out</Button>{' '}
+              <Button mb={1} size="md" colorScheme="red" variant="solid">Sign Out</Button>{' '}
             </Link>
             <Link href='#change-password'>
               <Button size="md" colorScheme="yellow" variant="solid">Change Password</Button>{' '}

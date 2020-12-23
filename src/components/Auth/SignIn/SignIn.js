@@ -5,7 +5,8 @@ import { signIn } from '../../../api/auth'
 import messages from '../../Util/AutoDismissAlert/messages'
 
 import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+
+import { Button, FormLabel, Heading, Link } from '@chakra-ui/react'
 
 import GuestSignIn from './GuestSignIn'
 
@@ -54,10 +55,10 @@ class SignIn extends Component {
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Sign In</h3>
-          <Form onSubmit={this.onSignIn}>
+          <Heading>Sign In</Heading>
+          <form onSubmit={this.onSignIn}>
             <Form.Group controlId="email">
-              <Form.Label>Email Address</Form.Label>
+              <FormLabel>Email Address</FormLabel>
               <Form.Control
                 required
                 type="email"
@@ -68,7 +69,7 @@ class SignIn extends Component {
               />
             </Form.Group>
             <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
+              <FormLabel>Password</FormLabel>
               <Form.Control
                 required
                 name="password"
@@ -79,13 +80,13 @@ class SignIn extends Component {
               />
             </Form.Group>
             <Button
-              variant="primary"
+              variant="solid"
               type="submit"
             >
               Sign In
             </Button>
-          </Form>
-          <Button className="pl-0" variant="link" href="#sign-up">Sign Up</Button>
+          </form>
+          <Link href="#sign-up"><Button variant="link">Sign Up</Button></Link>
           <GuestSignIn msgAlert={msgAlert} setUser={setUser} />
         </div>
       </div>

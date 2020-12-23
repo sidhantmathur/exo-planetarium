@@ -4,8 +4,12 @@ import { withRouter } from 'react-router-dom'
 import { signIn } from '../../../api/auth'
 import messages from '../../Util/AutoDismissAlert/messages'
 
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+// import Form from 'react-bootstrap/Form'
+// import Button from 'react-bootstrap/Button'
+
+import {
+  Button
+} from '@chakra-ui/react'
 
 class SignIn extends Component {
   constructor () {
@@ -42,7 +46,7 @@ class SignIn extends Component {
 
   render () {
     return (
-      <Form onSubmit={this.onSignIn}>
+      <form onSubmit={this.onSignIn}>
         <Button
           variant="link"
           type="submit"
@@ -50,7 +54,7 @@ class SignIn extends Component {
         >
           Sign In As Guest
         </Button>
-      </Form>
+      </form>
     )
   }
 }
