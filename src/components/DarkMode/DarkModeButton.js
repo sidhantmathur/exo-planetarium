@@ -7,7 +7,7 @@ const DarkModeButton = (props) => {
 
   return (
     <DarkMode>
-      <Button variant="outline" colorScheme="blue" onClick={toggleColorMode}>
+      <Button variant="outline" colorScheme="black" onClick={toggleColorMode}>
       Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
       </Button>
     </DarkMode>

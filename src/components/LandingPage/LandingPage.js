@@ -32,20 +32,26 @@ class LandingPage extends Component {
               <Heading size="3xl" fontWeight="bold">Exoplanets</Heading>
               <Heading size="lg" fontWeight="normal" mt={3}>Check out our neighbours!</Heading>
               <Box mt={5}>
-                <Link href='#search' color="teal">
+                <Link href='#search'>
                   <Button size="md" colorScheme="blue" variant="outline">Search</Button>{' '}
                 </Link>
-                <Link href='#random' color="teal">
+                <Link href='#random'>
                   <Button size="md" colorScheme="purple" variant="outline">Random</Button>{' '}
                 </Link>
               </Box>
               {(!user) ? (
                 <Box my={3}>
-                  <Link href='#sign-up' color="green">
+                  <Link href='#sign-up'>
                     <Button size="md" colorScheme="green" variant="solid">Create an Account</Button>{' '}
                   </Link>
                 </Box>
-              ) : ''}
+              ) : (
+                <Box my={3}>
+                  <Link href='#index-favs'>
+                    <Button size="md" colorScheme="teal" variant="solid">Saved Planets</Button>{' '}
+                  </Link>
+                </Box>
+              )}
             </Flex>
             <Box>
               <Image src="https://images.unsplash.com/photo-1464802686167-b939a6910659?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2833&q=80" rounded="1rem" />

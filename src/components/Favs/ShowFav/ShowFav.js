@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import { showFav, deleteFav } from '../../../api/fav'
 
-import { Box, Button, Link } from '@chakra-ui/react'
+import { Box, Button, Link, Heading } from '@chakra-ui/react'
 
 import ShowPlanetInline from '../../ShowPlanet/ShowPlanetInline'
 
@@ -47,22 +47,25 @@ const ShowFav = (props) => {
   return (
     <div>
       {fav ? (
-        <Box key={fav._id}>
-          <ShowPlanetInline
-            user={user}
-            match={match}
-            planetId={fav.name}
-          />
-          <Box>
-            <Link href={'#favs-update/' + fav._id} color="blue">
-              <Button variant="solid" href={'#favs-update/' + fav._id}>Update Fav</Button>{' '}
-            </Link>
-            <Button variant="solid" onClick={handleDelete}>Delete Fav</Button>{' '}
-            <Link href={'#planets/' + fav.name} color="blue">
-              <Button variant="outline">See More</Button>{' '}
-            </Link>
+        <Fragment>
+          <Box><Heading size="lg">{fav.title}</Heading></Box>
+          <Box key={fav._id}>
+            <ShowPlanetInline
+              user={user}
+              match={match}
+              planetId={fav.name}
+            />
+            <Box>
+              <Link href={'#favs-update/' + fav._id} color="blue">
+                <Button variant="solid" href={'#favs-update/' + fav._id}>Update Fav</Button>{' '}
+              </Link>
+              <Button variant="solid" onClick={handleDelete}>Delete Fav</Button>{' '}
+              <Link href={'#planets/' + fav.name} color="blue">
+                <Button variant="outline">See More</Button>{' '}
+              </Link>
+            </Box>
           </Box>
-        </Box>
+        </Fragment>
       ) : 'Loading...'}
     </div>
   )
