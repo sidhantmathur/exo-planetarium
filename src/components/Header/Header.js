@@ -4,45 +4,51 @@ import Navbar from 'react-bootstrap/Navbar'
 
 import DarkModeButton from '../DarkMode/DarkModeButton'
 
+import { Link, HStack, Heading } from '@chakra-ui/react'
+
 const authenticatedOptions = (
   <Fragment>
     {/*
-    <Nav.Link href="#change-password">Change Password</Nav.Link>
-    <Nav.Link href="#sign-out">Sign Out</Nav.Link>
+    <Link href="#change-password">Change Password</Link>
+    <Link href="#sign-out">Sign Out</Link>
     */}
-    <Nav.Link href="#user">User</Nav.Link>
-    <Nav.Link href="#random">Random</Nav.Link>
-    <Nav.Link href="#index-favs">Favs</Nav.Link>
+    <Link href="#index-favs">Saved</Link>
+    <Link href="#random">Random</Link>
+    <Link href="#user">User</Link>
 
   </Fragment>
 )
 
 const unauthenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#sign-up">Sign Up</Nav.Link>
-    <Nav.Link href="#sign-in">Sign In</Nav.Link>
+    <Link href="#sign-up">Sign Up</Link>
+    <Link href="#sign-in">Sign In</Link>
   </Fragment>
 )
 
 const alwaysOptions = (
   <Fragment>
-    {/* <Nav.Link href="#/">Home</Nav.Link> */}
-    <Nav.Link href="#search">Search</Nav.Link>
+    {/* <Link href="#/">Home</Link> */}
+    <Link href="#search">Search</Link>
   </Fragment>
 )
 
 const Header = ({ user }) => (
   <Navbar bg="primary" variant="dark" expand="md">
-    <Navbar.Brand href="#">
+    <Link href="#">
+      <Heading size="md" fontWeight="normal">
       Exo-Planetarium
-    </Navbar.Brand>
+      </Heading>
+    </Link>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
-        { user && <span className="navbar-text mr-2">Welcome, {user.email}</span>}
-        { alwaysOptions }
-        { user ? authenticatedOptions : unauthenticatedOptions }
-        <DarkModeButton />
+        <HStack spacing="15px">
+          {/* { user && <span className="navbar-text mr-2">Welcome, {user.email}</span>} */}
+          { alwaysOptions }
+          { user ? authenticatedOptions : unauthenticatedOptions }
+          <DarkModeButton />
+        </HStack>
       </Nav>
     </Navbar.Collapse>
   </Navbar>

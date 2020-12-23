@@ -3,7 +3,9 @@ import { Redirect } from 'react-router-dom'
 import { showFav, updateFav } from '../../../api/fav'
 
 import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button'
+
+import { Button, FormLabel, Heading } from '@chakra-ui/react'
 
 const UpdateFav = (props) => {
   const [fav, setFav] = useState({ favTitle: '' })
@@ -61,11 +63,11 @@ const UpdateFav = (props) => {
 
   return (
     <React.Fragment>
-      <h1>Update Fav Information</h1>
+      <Heading mb={3}>Update Fav Information</Heading>
       <Form onSubmit={handleSubmit}>
 
         <Form.Group controlId="fav">
-          <Form.Label>Fav Title</Form.Label>
+          <FormLabel>Fav Title</FormLabel>
           <Form.Control
             placeholder="Fav"
             value={fav.favTitle}
@@ -74,7 +76,7 @@ const UpdateFav = (props) => {
           />
         </Form.Group>
 
-        <Button variant='primary' type="submit">Update Fav</Button>
+        <Button variant='solid' colorScheme="yellow" type="submit">Update Fav</Button>
       </Form>
     </React.Fragment>
   )
