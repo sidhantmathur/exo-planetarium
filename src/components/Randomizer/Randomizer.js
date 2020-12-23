@@ -103,6 +103,8 @@ const RandomPlanet = (props) => {
                       user={user}
                       plName={planet.pl_name}
                       plId={planet._id}
+                      msgAlert={msgAlert}
+                      close={onClose}
                     />
                   </ModalContent>
                 </Modal>

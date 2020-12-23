@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { createFav } from '../../../api/fav'
-// import messages from '../AutoDismissAlert/messages'
+import messages from '../../Util/AutoDismissAlert/messages'
 // import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
@@ -24,13 +24,22 @@ class CreateFav extends Component {
   onCreateFav = event => {
     event.preventDefault()
 
-    const { user } = this.props
+    const { user, msgAlert, close } = this.props
 
     createFav(this.state, user)
-      .then(() => console.log('fav success'))
+      .then(() => msgAlert({
+        heading: 'Create Fav Success',
+        message: messages.createFavSuccess,
+        variant: 'success'
+      }))
+      .then(() => close())
       .catch(error => {
         this.setState({ title: '' })
-        console.log(error)
+        msgAlert({
+          heading: 'Fav Creation Failed with error: ' + error.message,
+          message: messages.createFavFailure,
+          variant: 'danger'
+        })
       })
   }
 
