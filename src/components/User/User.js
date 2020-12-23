@@ -30,6 +30,7 @@ class User extends Component {
         <Button variant="warning" href='#change-password'>Change Password</Button>{' '}
         <Button variant="danger" href='#sign-out'>Sign Out</Button>{' '}
         <Button variant="danger" href='#delete-all-favs'>Delete All Favourites</Button>{' '}
+        <Button variant="info" href='#planets-index'>See All Planets</Button>
       </Fragment>
     )
   }

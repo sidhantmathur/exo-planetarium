@@ -4,10 +4,12 @@ import { showPlanet } from '../../api/planet'
 
 import PlanetCardFull from './PlanetCardFull'
 
+// import { useDisclosure } from '@chakra-ui/react'
+
 const ShowPlanetFull = (props) => {
   const [planet, setPlanet] = useState(null)
 
-  const { match } = props
+  const { match, user } = props
 
   useEffect(() => {
     showPlanet(match.params.planetId)
@@ -51,6 +53,8 @@ const ShowPlanetFull = (props) => {
           glat={planet.glat}
           glon={planet.glon}
           dist={planet.sy_dist}
+
+          user={user}
         />
       ) : 'Loading...'}
     </Fragment>

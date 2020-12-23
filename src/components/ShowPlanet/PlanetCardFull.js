@@ -5,9 +5,15 @@ import { withRouter } from 'react-router-dom'
 // import ListGroup from 'react-bootstrap/ListGroup'
 // import ListGroupItem from 'react-bootstrap/ListGroupItem'
 
-import { SimpleGrid, Box, Table, Thead, Tbody, Tr, Th, Td, TableCaption, Heading, Badge, Stat, StatLabel, StatNumber, StatHelpText } from '@chakra-ui/react'
+// import { SimpleGrid, Box, Table, Thead, Tbody, Tr, Th, Td, TableCaption,
+//   Heading, Badge, Button, Modal, ModalOverlay, ModalContent, ModalHeader,
+//   ModalCloseButton, useDisclosure } from '@chakra-ui/react'
+
+import { SimpleGrid, Box, Table, Thead, Tbody, Tr, Th, Td, TableCaption,
+  Heading, Badge } from '@chakra-ui/react'
 
 import PlanetGraph from '../PlanetGraph/PlanetGraph'
+// import CreateFav from '../Favs/CreateFav/CreateFav'
 
 class PlanetCardFull extends Component {
   constructor () {
@@ -23,6 +29,9 @@ class PlanetCardFull extends Component {
       radiusE, massE, discovered, facility, locale, habit,
       starNum, planNum, discM, radiusJ, massJ,
       spectrum, stTemp, stRad, stMass, glat, glon, dist } = this.props
+    // user, msgAlert } = this.props
+
+    // const { isOpen, onOpen, onClose } = useDisclosure()
 
     return (
       <SimpleGrid columns={2} spacing={10}>
@@ -79,11 +88,26 @@ class PlanetCardFull extends Component {
             discovered={discovered}
           />
 
-          <Stat>
-            <StatLabel>Discovered from {locale} at</StatLabel>
-            <StatNumber>{facility}</StatNumber>
-            <StatHelpText>{discovered}</StatHelpText>
-          </Stat>
+          {/* {(user) ? (
+            <Fragment>
+              <Button onClick={onOpen}>Save Planet</Button>
+
+              <Modal isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent>
+                  <ModalHeader>Save Planet</ModalHeader>
+                  <ModalCloseButton />
+                  <CreateFav
+                    user={user}
+                    plName={name}
+                    plId={id}
+                    msgAlert={msgAlert}
+                    close={onClose}
+                  />
+                </ModalContent>
+              </Modal>
+            </Fragment>
+          ) : ''} */}
 
         </Box>
 
