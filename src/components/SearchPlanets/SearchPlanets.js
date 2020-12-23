@@ -37,7 +37,7 @@ class SearchPlanets extends Component {
         >
           <main className="search-container">
             <Configure
-              hitsPerPage={12}
+              hitsPerPage={20}
             />
             {/* <PoweredBy mt={5} /> */}
             <CustomSearchBox />

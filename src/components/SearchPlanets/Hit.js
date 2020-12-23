@@ -12,7 +12,7 @@ export default Hit
 
 function Hit ({ hit }) {
   return (
-    <Box>
+    <Box mb={5}>
       {hit.habit === 1 ? (<Badge colorScheme="green">Habitable</Badge>) : (<Badge colorScheme="red">UninHabitable</Badge>)}
       <Link href={hit.url}><Heading>{hit.pl_name}</Heading></Link>
       <Box
