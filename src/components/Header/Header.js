@@ -13,7 +13,6 @@ const authenticatedOptions = (
     <Link href="#sign-out">Sign Out</Link>
     */}
     <Link href="#index-favs">Saved</Link>
-    <Link href="#random">Random</Link>
     <Link href="#user">User</Link>
 
   </Fragment>
@@ -30,6 +29,7 @@ const alwaysOptions = (
   <Fragment>
     {/* <Link href="#/">Home</Link> */}
     <Link href="#search">Search</Link>
+    <Link href="#random">Random</Link>
   </Fragment>
 )
 

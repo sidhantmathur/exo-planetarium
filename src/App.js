@@ -27,6 +27,7 @@ import ShowPlanetFull from './components/ShowPlanet/ShowPlanetFull'
 // import ChHeader2 from './components/Header/ChHeader2'
 
 import LandingPage from './components/LandingPage/LandingPage'
+import Definitions from './components/Definitions/Definitions'
 
 class App extends Component {
   constructor () {
@@ -120,6 +121,10 @@ class App extends Component {
 
           <AuthenticatedRoute user={user} path='/user' render={() => (
             <User user={user} />
+          )} />
+
+          <Route user={user} path='/definitions' render={() => (
+            <Definitions user={user} />
           )} />
 
           <AuthenticatedRoute user={user} path='/delete-all-favs' render={() => (

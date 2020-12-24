@@ -39,7 +39,7 @@ class PlanetGraph extends Component {
       datasets: [
         {
           label: name,
-          backgroundColor: 'rgba(75,192,192,1)',
+          backgroundColor: '#38B2AC',
           borderColor: 'rgba(0,0,0,1)',
           borderWidth: 2,
           data: [radiusE, massE]
@@ -67,7 +67,7 @@ class PlanetGraph extends Component {
       datasets: [
         {
           label: name + '\'s Star Size',
-          backgroundColor: 'rgba(75,192,192,1)',
+          backgroundColor: '#9F7AEA',
           borderColor: 'rgba(0,0,0,1)',
           borderWidth: 2,
           data: [stRad, stMass]
