@@ -34,7 +34,7 @@ class User extends Component {
           <Box my={3}>
             <Heading size="md" mb={3}>Planets</Heading>
             <Link href='#index-favs'>
-              <Button mb={1} size="md" colorScheme="teal" variant="solid">Saved Planets</Button>{' '}
+              <Button mb={1} size="md" colorScheme="green" variant="solid">Saved Planets</Button>{' '}
             </Link>
             <Link href='#planets-index'>
               <Button size="md" colorScheme="blue" variant="solid">All Planets</Button>{' '}

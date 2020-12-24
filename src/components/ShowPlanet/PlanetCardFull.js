@@ -10,7 +10,7 @@ import { withRouter } from 'react-router-dom'
 //   ModalCloseButton, useDisclosure } from '@chakra-ui/react'
 
 import { SimpleGrid, Box, Table, Thead, Tbody, Tr, Th, Td, TableCaption,
-  Heading, Badge } from '@chakra-ui/react'
+  Heading, Badge, Divider, Link, Button } from '@chakra-ui/react'
 
 import PlanetGraph from '../PlanetGraph/PlanetGraph'
 // import CreateFav from '../Favs/CreateFav/CreateFav'
@@ -86,6 +86,8 @@ class PlanetCardFull extends Component {
             radiusE={radiusE}
             massE={massE}
             discovered={discovered}
+            stRad={stRad}
+            stMass={stMass}
           />
 
           {/* {(user) ? (
@@ -168,7 +170,7 @@ class PlanetCardFull extends Component {
                 <Td>Suns</Td>
               </Tr>
               <Tr>
-                <Td>Stellar Mas</Td>
+                <Td>Stellar Mass</Td>
                 <Td>{stMass}</Td>
                 <Td>Suns</Td>
               </Tr>
@@ -189,6 +191,24 @@ class PlanetCardFull extends Component {
               </Tr>
             </Tbody>
           </Table>
+          <Divider />
+          <Heading mb={3}>More Options</Heading>
+          <Box mb={3}>
+            <Link href='#definitions'>
+              <Button size="md" colorScheme="teal" variant="solid">Column Definitions</Button>{' '}
+            </Link>
+          </Box>
+          <Box>
+            <Link href='#index-favs'>
+              <Button size="md" colorScheme="green" variant="outline">Saved Planets</Button>{' '}
+            </Link>
+            <Link href='#random'>
+              <Button size="md" colorScheme="purple" variant="outline">Randomizer</Button>{' '}
+            </Link>
+            <Link href='#search'>
+              <Button size="md" colorScheme="blue" variant="outline">Search</Button>{' '}
+            </Link>
+          </Box>
         </Box>
       </SimpleGrid>
     )

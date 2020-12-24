@@ -32,7 +32,7 @@ class PlanetGraph extends Component {
   // }
 
   render () {
-    const { name, orbit, orbitPeriod, radiusE, massE } = this.props
+    const { name, orbit, orbitPeriod, radiusE, massE, stRad, stMass } = this.props
 
     const size = {
       labels: ['Radius', 'Mass'],
@@ -62,6 +62,21 @@ class PlanetGraph extends Component {
 
     console.log(data)
 
+    const stSize = {
+      labels: ['Radius', 'Mass'],
+      datasets: [
+        {
+          label: name + '\'s Star Size',
+          backgroundColor: 'rgba(75,192,192,1)',
+          borderColor: 'rgba(0,0,0,1)',
+          borderWidth: 2,
+          data: [stRad, stMass]
+        }
+      ]
+    }
+
+    console.log(stRad)
+
     return (
       <div>
         <Bar
@@ -77,16 +92,50 @@ class PlanetGraph extends Component {
                 {
                   ticks: {
                     suggestedMin: 0
+                  },
+                  scaleLabel: {
+                    display: true,
+                    labelString: 'Earths'
                   }
                 }
               ]
             },
             legend: {
-              display: true,
+              display: false,
               position: 'right'
             }
           }}
         />
+        {(stRad || stMass) ? (
+          <Bar
+            data={stSize}
+            options={{
+              title: {
+                display: true,
+                text: 'Star Size',
+                fontSize: 20
+              },
+              scales: {
+                yAxes: [
+                  {
+                    ticks: {
+                      suggestedMin: 0
+                    },
+                    scaleLabel: {
+                      display: true,
+                      labelString: 'Suns'
+                    }
+                  }
+                ]
+              },
+              legend: {
+                display: false,
+                position: 'right'
+              }
+            }}
+          />
+        ) : ''}
+
       </div>
     )
   }
