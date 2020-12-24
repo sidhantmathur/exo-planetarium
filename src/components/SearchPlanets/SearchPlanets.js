@@ -32,7 +32,8 @@ class SearchPlanets extends Component {
       <div>
         <Heading size="xl" mt={3}>Search</Heading>
         <InstantSearch
-          indexName="dev-planets"
+          // indexName="dev-planets"
+          indexName="prod_planets"
           searchClient={searchClient}
         >
           <main className="search-container">
