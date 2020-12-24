@@ -34,6 +34,7 @@ The way to get information about all discovered exo-planets
 - React
 - HTML/CSS/Javascript
 - Bootstrap
+- Chakra-UI
 
 ### Back-End
 
