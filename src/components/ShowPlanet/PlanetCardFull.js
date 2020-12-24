@@ -199,9 +199,9 @@ class PlanetCardFull extends Component {
             </Link>
           </Box>
           <Box>
-            <Link href='#index-favs'>
+            {/* <Link href='#index-favs'>
               <Button size="md" colorScheme="green" variant="outline">Saved Planets</Button>{' '}
-            </Link>
+            </Link> */}
             <Link href='#random'>
               <Button size="md" colorScheme="purple" variant="outline">Randomizer</Button>{' '}
             </Link>
