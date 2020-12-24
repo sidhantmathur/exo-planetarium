@@ -14,7 +14,8 @@ function Hit ({ hit }) {
   return (
     <Box mb={5}>
       {hit.habit === 1 ? (<Badge colorScheme="green">Habitable</Badge>) : (<Badge colorScheme="red">UninHabitable</Badge>)}
-      <Link href={hit.url}><Heading>{hit.pl_name}</Heading></Link>
+      {/* href in prod is _id, in dec is url */}
+      <Link href={hit._id}><Heading>{hit.pl_name}</Heading></Link>
       <Box
         mt="1"
         fontWeight="semibold"
