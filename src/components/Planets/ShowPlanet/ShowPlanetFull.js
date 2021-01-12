@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
-import { showPlanet } from '../../api/planet'
+import { showPlanet } from '../../../api/planet'
 
 import PlanetCardFull from './PlanetCardFull'
 
