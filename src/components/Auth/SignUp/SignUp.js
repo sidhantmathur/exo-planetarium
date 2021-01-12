@@ -10,6 +10,8 @@ import { Button, FormLabel, Heading, Link } from '@chakra-ui/react'
 
 import GuestSignIn from '../SignIn/GuestSignIn'
 
+import '../authStyles.scss'
+
 class SignUp extends Component {
   constructor () {
     super()
@@ -59,7 +61,7 @@ class SignUp extends Component {
           <Heading>Sign Up</Heading>
           <Form onSubmit={this.onSignUp}>
             <Form.Group controlId="email">
-              <FormLabel>Email address</FormLabel>
+              <FormLabel>Email address:</FormLabel>
               <Form.Control
                 required
                 type="email"
@@ -70,7 +72,7 @@ class SignUp extends Component {
               />
             </Form.Group>
             <Form.Group controlId="password">
-              <FormLabel>Password</FormLabel>
+              <FormLabel>Password:</FormLabel>
               <Form.Control
                 required
                 name="password"
@@ -81,7 +83,7 @@ class SignUp extends Component {
               />
             </Form.Group>
             <Form.Group controlId="passwordConfirmation">
-              <FormLabel>Password Confirmation</FormLabel>
+              <FormLabel>Password Confirmation:</FormLabel>
               <Form.Control
                 required
                 name="passwordConfirmation"
