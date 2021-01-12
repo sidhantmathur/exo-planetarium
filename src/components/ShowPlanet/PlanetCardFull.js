@@ -12,7 +12,7 @@ import { withRouter } from 'react-router-dom'
 import { SimpleGrid, Box, Table, Thead, Tbody, Tr, Th, Td, TableCaption,
   Heading, Badge, Divider, Link, Button } from '@chakra-ui/react'
 
-import PlanetGraph from '../../PlanetGraph/PlanetGraph'
+import PlanetGraph from '../PlanetGraph/PlanetGraph'
 // import CreateFav from '../Favs/CreateFav/CreateFav'
 
 class PlanetCardFull extends Component {

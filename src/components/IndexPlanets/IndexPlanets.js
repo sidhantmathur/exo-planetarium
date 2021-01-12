@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
-import { indexPlanets } from '../../../../api/planet'
-import messages from '../../../Util/AutoDismissAlert/messages'
+import { indexPlanets } from '../../api/planet'
+import messages from '../Util/AutoDismissAlert/messages'
 // import CardColumns from 'react-bootstrap/CardColumns'
 
 import { SimpleGrid, Box, Button, Heading, Link } from '@chakra-ui/react'
