@@ -112,7 +112,7 @@ const RandomPlanet = (props) => {
             ) : ''}
           </Box>
         </div>
-      ) : 'Loading...'}
+      ) : 'Loading... Might take a second for Heroku servers to wake up! '}
     </div>
   )
 }
